@@ -1,21 +1,9 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import { Container, ImageListItem } from '@mui/material';
-import { Typography } from '@mui/material';
+import { Container, Typography, Button, Box, Grid } from '@mui/material';
 import heroSection from '../images/heroSection.jpg';
 import { makeStyles } from '@mui/styles';
-import { fontSize } from '@mui/system';
-import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import {
-   createTheme,
-   responsiveFontSizes,
-   ThemeProvider,
-} from '@mui/material/styles';
+
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -24,7 +12,11 @@ const useStyles = makeStyles((theme) => ({
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      height: '100vh',
+      minHeight: '100vh',
+
+      [theme.breakpoints.down('lg')]: {
+         height: '70vh',
+      },
       [theme.breakpoints.down('md')]: {
          height: '90vh',
       },
@@ -50,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
       },
       [theme.breakpoints.down('sm')]: {
          width: '18rem',
-         backgroundColor: 'lightgreen',
       },
    },
 
@@ -81,13 +72,11 @@ const useStyles = makeStyles((theme) => ({
    },
 
    btnJob: {
-      color: 'red',
       paddingBottom: '5rem',
+      color: 'orange',
    },
 }));
 
-// let theme = createTheme();
-// theme = responsiveFontSizes(theme);
 
 function Home() {
    const classes = useStyles();
@@ -111,16 +100,15 @@ function Home() {
                         sx={{ fontWeight: 700 }}
                         className={classes.header}
                      >
-                        SUCCESS BEGINS HERE
+                        IT STARTS HERE
                      </Typography>
                      <Link to={'/jobs'} className={classes.link}>
                         <Button
                            variant="contained"
                            color="error"
-                           className={classes.btnJob}
                            sx={{ fontWeight: 'bold', fontSize: 18 }}
                         >
-                           Find Job <ArrowForwardIosIcon />
+                           Find Jobs
                         </Button>
                      </Link>
                   </Box>

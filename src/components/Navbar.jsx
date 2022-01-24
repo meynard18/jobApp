@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
    link: {
       fontWeight: '600',
-      color: '#242124',
+      color: theme.palette.secondaryText.main,
       textDecoration: 'none',
       paddingLeft: '2rem',
     

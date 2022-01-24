@@ -15,16 +15,16 @@ export const theme = createTheme({
          main: '#31393C',
       },
       blueText: {
-         main: '#007FFF',
+         main: '#00CCFF',
       },
       grayText: {
-         main: '#333333',
+         main: '#414A4C',
       },
       primaryText: {
          main: '#323232',
       },
       secondaryText: {
-         main: '#242124',
+         main: '#625D5D',
       },
       accent: {
          main: '#323232',
@@ -45,5 +45,9 @@ export const theme = createTheme({
    typography: {
       fontFamily: ['Montserrat', 'sans-serif'].join(','),
       fontSize: '1rem',
+      button: {
+         textTransform: 'none',
+         fontWeight: 500,
+      }
    },
 });
