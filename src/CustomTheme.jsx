@@ -10,12 +10,14 @@ export const theme = createTheme({
    palette: {
       whiteBG: {
          main: '#FFFAFA',
+         secondary: '#F8F8FF',
       },
       coloredBG: {
          main: '#31393C',
       },
-      blueText: {
+      blue: {
          main: '#00CCFF',
+         secondary: '#F0F8FF',
       },
       grayText: {
          main: '#414A4C',
@@ -28,8 +30,6 @@ export const theme = createTheme({
       },
       accent: {
          main: '#323232',
-         // main: '#E41C38',
-         
       },
    },
    breakpoints: {
@@ -48,6 +48,6 @@ export const theme = createTheme({
       button: {
          textTransform: 'none',
          fontWeight: 500,
-      }
+      },
    },
 });

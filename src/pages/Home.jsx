@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    header: {
-      color: theme.palette.blueText.main,
+      color: theme.palette.blue.main,
       fontSize: 66,
       paddingBottom: '1.5rem',
       [theme.breakpoints.down('md')]: {

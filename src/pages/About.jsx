@@ -63,7 +63,7 @@ function About() {
                   >
                      Who We Are
                   </Typography>
-                  <Typography className={classes.aboutText}>
+                  <Typography className={classes.aboutText} variant='body1'>
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Eum sapiente odit nisi quibusdam magni consequuntur
                      voluptates nemo molestias quod ipsa cupiditate debitis

@@ -47,7 +47,7 @@ function DrawerComponent() {
             </List>
          </Drawer>
          <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-            <DehazeIcon sx={{fontSize:25}} />
+            <DehazeIcon sx={{fontSize:23}} />
          </IconButton>
       </>
    );

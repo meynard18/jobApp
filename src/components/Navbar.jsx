@@ -30,6 +30,11 @@ const useStyles = makeStyles((theme) => ({
 
    },
 
+   logo: {
+      display: 'flex',
+      alignItems:'center',
+   },
+
    link: {
       fontWeight: '600',
       color: theme.palette.secondaryText.main,
@@ -48,7 +53,7 @@ function Navbar() {
       <AppBar position="sticky" className={classes.navContainer}>
          <CssBaseline />
          <Toolbar className={classes.navbar}>
-            <Link to="/jobApp">
+            <Link to="/jobApp" className={classes.logo}>
                <img src={logo} alt="Company Logo" />
             </Link>
             {isMobile ? (
