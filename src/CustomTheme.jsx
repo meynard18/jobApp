@@ -4,7 +4,6 @@ import {
    responsiveFontSizes,
    ThemeProvider,
 } from '@mui/material/styles';
-import { fontWeight } from '@mui/system';
 
 export const theme = createTheme({
    palette: {
@@ -19,16 +18,18 @@ export const theme = createTheme({
          secondary: '#F5FEFD',
          third: '#2D5DA1',
          fourth: '#3457D5',
+         fifth: ' #4B9CD3',
       },
       error: {
          main: '#FF5349',
       },
       gray: {
+         bg: '#eeeeee',
+         fW400: '#63645E',
          fW500: '#323232',
          fW600: '#625D5D',
          fW700: '#414A4C',
       },
-    
    },
    breakpoints: {
       values: {

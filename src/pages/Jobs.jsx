@@ -19,21 +19,6 @@ const useStyles = makeStyles((theme) => ({
       margin: 'auto',
    },
 
-   formBox: {
-      display: 'flex',
-      gap: '1rem',
-   },
-
-   inputStyle: {
-      position: 'relative',
-   },
-
-   formControl1: {
-      width: 'clamp(15rem, 30%, 20rem)',
-   },
-   formControl2: {
-      width: '100%',
-   },
 }));
 
 function Jobs() {

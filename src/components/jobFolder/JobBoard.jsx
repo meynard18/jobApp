@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
    },
 
    hoverEffect: {
-
+      padding: '1rem',
+      
       '&:hover': {
          backgroundColor: theme.palette.third.secondary,
       },
@@ -17,42 +18,41 @@ const useStyles = makeStyles((theme) => ({
 
    description: {
       fontSize: '.9rem',
+      color: theme.palette.gray.fW400,
    },
    span: {
-      background: '#eeeeee',
-      marginRight: '1rem',
+      background: theme.palette.gray.bg,
+      marginRight: '.8rem',
       padding: '.1rem .8rem',
       borderRadius: '10rem',
    },
 
    nameValue: {
+      color: theme.palette.gray.fW600,
       fontSize: '.8rem',
    },
 
    value: {
-      color: 'red',
+      color: theme.palette.third.fifth,
       marginRight: '.5rem',
-      padding: '.4rem .6rem',
+      paddingRight: '.4rem',
    },
 }));
 
 function JobBoard(props) {
    const classes = useStyles();
    return (
-      <Box sx={{ m: 5 }} className={classes.hoverEffect}>
+      <Box sx={{ m: 1 }} className={classes.hoverEffect}>
          <Typography className={classes.position} sx={{ fontWeight: 600 }}>
             {props.job.position}
          </Typography>
-         <Typography
-            className={classes.description}
-            sx={{ fontWeight: 'light' }}
-         >
+         <Typography className={classes.description} sx={{ fontWeight: 400, mt: 2, mb: 2 }}>
             {props.job.description}
-         </Typography>
+         </Typography >
          {props.job.language.map((languages) => (
             <span className={classes.span}>{languages}</span>
          ))}
-         <Typography sx={{ fontWeight: 600 }}>
+         <Typography sx={{ fontWeight: 600, mt: 2, mb: 1}}>
             <span className={classes.nameValue}>
                Rate:{' '}
                <span className={classes.value}>{props.job.compensation}</span>
