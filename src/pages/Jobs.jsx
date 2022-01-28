@@ -8,8 +8,9 @@ import {
    Box,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import JobPosting from '../components/job/JobPosting';
-import SearchBar from '../components/job/SearchBar';
+import SearchBar from '../components/jobFolder/SearchBar';
+import JobPage from '../components/jobFolder/JobPage';
+
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -39,8 +40,8 @@ function Jobs() {
    const classes = useStyles();
    return (
       <Box sx={{ mt: 10 }} className={classes.container}>
-        <SearchBar/>
-        <JobPosting/>
+         <SearchBar/>
+         <JobPage/>
       </Box>
    );
 }

@@ -10,7 +10,7 @@ import { createTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme) => ({
    navbar: {
-      backgroundColor: '#FFFAFA',
+      backgroundColor: theme.palette.primary.main,
       justifyContent: 'space-around',
       [theme.breakpoints.down('xl')]: {
          justifyContent: 'space-between',
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
    link: {
       fontWeight: '600',
-      color: theme.palette.secondaryText.main,
+      color: theme.palette.gray.fW700,
       textDecoration: 'none',
       paddingLeft: '2rem',
     

@@ -8,29 +8,27 @@ import { fontWeight } from '@mui/system';
 
 export const theme = createTheme({
    palette: {
-      whiteBG: {
+      primary: {
          main: '#FFFAFA',
-         secondary: '#F8F8FF',
       },
-      coloredBG: {
+      secondary: {
          main: '#31393C',
       },
-      blue: {
+      third: {
          main: '#00CCFF',
-         secondary: '#F0F8FF',
+         secondary: '#F5FEFD',
+         third: '#2D5DA1',
+         fourth: '#3457D5',
       },
-      grayText: {
-         main: '#414A4C',
+      error: {
+         main: '#FF5349',
       },
-      primaryText: {
-         main: '#323232',
+      gray: {
+         fW500: '#323232',
+         fW600: '#625D5D',
+         fW700: '#414A4C',
       },
-      secondaryText: {
-         main: '#625D5D',
-      },
-      accent: {
-         main: '#323232',
-      },
+    
    },
    breakpoints: {
       values: {
@@ -45,6 +43,7 @@ export const theme = createTheme({
    typography: {
       fontFamily: ['Montserrat', 'sans-serif'].join(','),
       fontSize: '1rem',
+
       button: {
          textTransform: 'none',
          fontWeight: 500,

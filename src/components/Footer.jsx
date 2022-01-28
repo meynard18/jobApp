@@ -10,7 +10,7 @@ import logo2 from '../images/logo2.png';
 
 const useStyles = makeStyles((theme) => ({
    container: {
-      backgroundColor: theme.palette.coloredBG.main,
+      backgroundColor: theme.palette.secondary.main,
       marginTop: '2rem',
       padding: '.7rem 0',
       position: 'relative',
@@ -26,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
    icon: {
       fontSize: 28,
       margin: 10,
-      color: theme.palette.whiteBG.main,
+      color: theme.palette.primary.main,
    },
 
    copyright: {
      display: 'flex',
      justifyContent:'center',
-     color: theme.palette.whiteBG.main,
+     color: theme.palette.primary.main,
      fontSize: '1rem',
    },
 

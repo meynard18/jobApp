@@ -4,7 +4,6 @@ import heroSection from '../images/heroSection.jpg';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 
-
 const useStyles = makeStyles((theme) => ({
    container: {
       backgroundImage: `url(${heroSection})`,
@@ -46,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
    },
 
    subHeader: {
-      color: theme.palette.grayText.main,
+      color: theme.palette.gray.fW500,
       paddingTop: '.7rem',
       fontSize: 32,
       [theme.breakpoints.down('md')]: {
@@ -54,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    header: {
-      color: theme.palette.blue.main,
+      color: theme.palette.third.main,
       fontSize: 66,
       paddingBottom: '1.5rem',
       [theme.breakpoints.down('md')]: {
@@ -76,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
       color: 'orange',
    },
 }));
-
 
 function Home() {
    const classes = useStyles();

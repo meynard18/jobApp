@@ -23,17 +23,11 @@ const cardContents = [
    },
 ];
 
-const useStyles = makeStyles((theme) => ({
-   container: {
-      marginTop: '2rem',
-   },
 
-}));
 
 function CardComponent() {
-   const classes = useStyles();
    return (
-      <Container className={classes.container}>
+      <Container sx={{mt: 3}}>
          <Grid container direction="row" justifyContent="center" >
             {cardContents.map((item) => (
                <Card sx={{ maxWidth: 345, m: 3}}>
@@ -50,7 +44,7 @@ function CardComponent() {
                            variant="h5"
                            component="div"
                         ></Typography>
-                        <Typography variant="h3" align='center' color= 'theme.palette.secondaryText.main' sx={{fontWeight: 600}}>
+                        <Typography variant="h3" align='center' color= 'theme.palette.fW600' sx={{fontWeight: 600}}>
                             {item.cardTitle}
                         </Typography>
                      </CardContent>
