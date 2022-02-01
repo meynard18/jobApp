@@ -5,7 +5,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$50290.35",
       "duration": "6 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["HTML", "CSS", "Javascript"],
       "company": "Talane",
       "date": "2021-11-17",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -16,7 +16,7 @@
       "category": ["Back-End Developer"],
       "compensation": "$49938.98",
       "duration": "12 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Php", "Laravel"],
       "company": "Tagpad",
       "date": "2021-04-23",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -27,7 +27,7 @@
       "category": ["Full-Stack Web Developer"],
       "compensation": "$44681.83",
       "duration": "18 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["HTML", "CSS", "Javascript", "MongoDB", "NodeJS"],
       "company": "Roodel",
       "date": "2021-04-13",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -38,7 +38,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$67342.53",
       "duration": "24 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["HTML", "CSS", "Javascript", "React"],
       "company": "Fiveclub",
       "date": "2021-06-17",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -49,7 +49,7 @@
       "category": ["Back-End Developer"],
       "compensation": "$62281.17",
       "duration": "1 year",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Ruby on Rails", "Php"],
       "company": "Bluejam",
       "date": "2021-10-16",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -60,7 +60,7 @@
       "category": ["Full-Stack Web Developer"],
       "compensation": "$94142.69",
       "duration": "8months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Javascript","React", "NodeJS", "Pyton"],
       "company": "Meembee",
       "date": "2021-06-29",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -71,7 +71,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$71211.35",
       "duration": "",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["React", "Next.JS"],
       "company": "Photofeed",
       "date": "2021-04-10",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -82,7 +82,7 @@
       "category": ["Back-End Developer"],
       "compensation": "$42936.40",
       "duration": "6 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Java", "Spring MVC", "SQL", "NoSQL"],
       "company": "Kwideo",
       "date": "2021-07-20",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -93,7 +93,7 @@
       "category": ["Full-Stack Web Developer"],
       "compensation": "$86338.25",
       "duration": "12 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Javascript", "React", "NoSQL", "NodeJS"],
       "company": "Thoughtmix",
       "date": "2021-11-10",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -104,7 +104,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$64282.45",
       "duration": "18 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["HTML", "CSS", "Javascript"],
       "company": "Youfeed",
       "date": "2021-07-31",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -115,7 +115,7 @@
       "category": ["Back-End Developer"],
       "compensation": "$52630.48",
       "duration": "24 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["React", "NodeJS"],
       "company": "Topicshots",
       "date": "2021-03-19",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -126,7 +126,7 @@
       "category": ["Full-Stack Web Developer"],
       "compensation": "$80379.56",
       "duration": "1 year",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Java", "Ruby on Rails", "C#"],
       "company": "Realbuzz",
       "date": "2021-11-08",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -137,7 +137,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$64759.27",
       "duration": "8months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["HTML", "CSS","Sass", "Javascript"],
       "company": "Mycat",
       "date": "2022-01-03",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -148,7 +148,7 @@
       "category": ["Back-End Developer"],
       "compensation": "$90420.00",
       "duration": "",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Php", "Laravel8"],
       "company": "Twitterbeat",
       "date": "2021-06-20",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -170,7 +170,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$72070.18",
       "duration": "12 months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["HTML", "CSS", "Javascript", "React"],
       "company": "Photobug",
       "date": "2022-01-03",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
@@ -203,7 +203,7 @@
       "category": ["Front-End Developer"],
       "compensation": "$40882.30",
       "duration": "1 year",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["React", "Sass", "Gatsby"],
       "company": "Skimia",
       "date": "2021-02-11",
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
@@ -214,7 +214,7 @@
       "category": ["Back-End Developer"],
       "compensation": "$83785.05",
       "duration": "8months",
-      "language": ["HTML", "CSS", "watermelon"],
+      "language": ["Java"],
       "company": "Photospace",
       "date": "2021-09-25",
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
    },
 
    heading: {
-      color: theme.palette.fW500,
+      color: theme.palette.gray.fW500,
       fontSize: '4rem',
       paddingBottom: '1rem',
       [theme.breakpoints.down('lg')]: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    heading2: {
-      color: theme.palette.fW500,
+      color: theme.palette.gray.fW500,
       fontSize: '4rem',
       [theme.breakpoints.down('lg')]: {
          fontSize: '3rem',
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
    },
    aboutText: {
-      color: theme.palette.fW600,
+      color: theme.palette.gray.fW600,
       width: '90%',
       margin: 'auto',
       [theme.breakpoints.down('lg')]: {

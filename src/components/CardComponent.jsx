@@ -44,7 +44,7 @@ function CardComponent() {
                            variant="h5"
                            component="div"
                         ></Typography>
-                        <Typography variant="h3" align='center' color= 'theme.palette.fW600' sx={{fontWeight: 600}}>
+                        <Typography variant="h3" align='center' color= 'theme.palette.gray.fW600' sx={{fontWeight: 600}}>
                             {item.cardTitle}
                         </Typography>
                      </CardContent>

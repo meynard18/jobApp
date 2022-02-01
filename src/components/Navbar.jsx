@@ -1,46 +1,48 @@
 import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, CssBaseline } from '@mui/material';
+import { Toolbar, CssBaseline, AppBar } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import DrawerComponent from './DrawerComponent';
-import { createTheme } from '@mui/material/styles';
-
+import { createTheme, styled } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme) => ({
-   navbar: {
-      backgroundColor: theme.palette.primary.main,
-      justifyContent: 'space-around',
-      [theme.breakpoints.down('xl')]: {
-         justifyContent: 'space-between',
-        
-      },
-
-   },
    navContainer: {
       display: 'flex',
-      justifyContent:'center',
+      justifyContent: 'center',
+   },
+   navbar: {
+      width: '89%',
+      margin:'auto',
+      borderBottom: '1px solid #cecece',
+      justifyContent: 'space-between',
+      [theme.breakpoints.down('xl')]: {
+         width: '100%',
+         justifyContent: 'space-between',
+      },
    },
    navLink: {
-      marginLeft: '40rem',
+      marginLeft: '34rem',
       [theme.breakpoints.down('xl')]: {
          marginLeft: '25rem',
       },
-
    },
 
    logo: {
       display: 'flex',
-      alignItems:'center',
+      alignItems: 'center',
    },
 
    link: {
-      fontWeight: '600',
-      color: theme.palette.gray.fW700,
+      flexWrap: 'none',
+      fontWeight: '500',
+      color: theme.palette.gray.fW600,
       textDecoration: 'none',
-      paddingLeft: '2rem',
-    
+      padding: '0 1rem',
+      '&:hover': {
+         color: 'black',
+      },
    },
 }));
 
@@ -50,7 +52,11 @@ function Navbar() {
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
    return (
-      <AppBar position="sticky" className={classes.navContainer}>
+      <StyledAppbar
+         position="sticky"
+         className={classes.navContainer}
+         elevation={0}
+      >
          <CssBaseline />
          <Toolbar className={classes.navbar}>
             <Link to="/jobApp" className={classes.logo}>
@@ -60,7 +66,7 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navLink}>
-                  <Link to="/jobs"  className={classes.link}>
+                  <Link to="/jobs" className={classes.link}>
                      Jobs
                   </Link>
                   <Link to="/about" className={classes.link}>
@@ -73,8 +79,11 @@ function Navbar() {
                </div>
             )}
          </Toolbar>
-      </AppBar>
+      </StyledAppbar>
    );
 }
 
 export default Navbar;
+const StyledAppbar = styled(AppBar)`
+   background-color: white;
+`;

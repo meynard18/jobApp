@@ -7,28 +7,30 @@ import {
 
 export const theme = createTheme({
    palette: {
-      primary: {
+      primaryBG: {
          main: '#FFFAFA',
       },
       secondary: {
          main: '#31393C',
       },
       third: {
-         main: '#00CCFF',
+         main: '#005A92',
          secondary: '#F5FEFD',
          third: '#2D5DA1',
          fourth: '#3457D5',
          fifth: ' #4B9CD3',
+         sixth: '#00CCFF'
       },
-      error: {
-         main: '#FF5349',
+      btnColor: {
+         main: '#00CCFF',
+         contrastText: 'white'
       },
       gray: {
          bg: '#eeeeee',
          fW400: '#63645E',
          fW500: '#323232',
          fW600: '#625D5D',
-         fW700: '#414A4C',
+         fW700: ' #565051',
       },
    },
    breakpoints: {

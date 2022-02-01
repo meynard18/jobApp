@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import data from '../../data/Jobs.json';
 
 const useStyles = makeStyles((theme) => ({
    position: {
@@ -10,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 
    hoverEffect: {
       padding: '1rem',
-      
+
       '&:hover': {
          backgroundColor: theme.palette.third.secondary,
       },
@@ -46,13 +45,16 @@ function JobBoard(props) {
          <Typography className={classes.position} sx={{ fontWeight: 600 }}>
             {props.job.position}
          </Typography>
-         <Typography className={classes.description} sx={{ fontWeight: 400, mt: 2, mb: 2 }}>
+         <Typography
+            className={classes.description}
+            sx={{ fontWeight: 400, mt: 2, mb: 2 }}
+         >
             {props.job.description}
-         </Typography >
+         </Typography>
          {props.job.language.map((languages) => (
             <span className={classes.span}>{languages}</span>
          ))}
-         <Typography sx={{ fontWeight: 600, mt: 2, mb: 1}}>
+         <Typography sx={{ fontWeight: 600, mt: 2, mb: 1 }}>
             <span className={classes.nameValue}>
                Rate:{' '}
                <span className={classes.value}>{props.job.compensation}</span>

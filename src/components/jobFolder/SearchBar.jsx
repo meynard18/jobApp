@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
    Select,
    MenuItem,
@@ -8,6 +8,7 @@ import {
    Box,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import data from '../../data/Jobs.json';
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -33,8 +34,11 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-function SearchBar() {
+const categories = ['Front-end', 'Back-end', 'Full-stack'];
+
+function SearchBar({ handleSubmit, handleSearch, searchText }) {
    const classes = useStyles();
+
    return (
       <>
          <Box className={classes.formBox}>
@@ -49,11 +53,13 @@ function SearchBar() {
                   variant="outlined"
                   sx={{ borderRadius: 5 }}
                   className={classes.inputStyle}
-                  //  onChange={handleChange}
+                  //  onChange={handleCategoryChange}
                >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
+                  {categories.map((item, index) => (
+                     <MenuItem value={10} key={index}>
+                        {item}
+                     </MenuItem>
+                  ))}
                </Select>
             </FormControl>
 
@@ -64,6 +70,9 @@ function SearchBar() {
                <OutlinedInput
                   label="Search for Jobs"
                   variant="outlined"
+                  onChange={handleSearch}
+                  onKeyPress={handleSubmit}
+                  value={searchText}
                   sx={{ borderRadius: 5 }}
                ></OutlinedInput>
             </FormControl>

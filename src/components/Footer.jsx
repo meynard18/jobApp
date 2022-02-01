@@ -26,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
    icon: {
       fontSize: 28,
       margin: 10,
-      color: theme.palette.primary.main,
+      color: theme.palette.primaryBG.main,
    },
 
    copyright: {
      display: 'flex',
      justifyContent:'center',
-     color: theme.palette.primary.main,
+     color: theme.palette.primaryBG.main,
      fontSize: '1rem',
    },
 

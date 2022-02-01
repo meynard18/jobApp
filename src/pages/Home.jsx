@@ -3,6 +3,7 @@ import { Container, Typography, Button, Box, Grid } from '@mui/material';
 import heroSection from '../images/heroSection.jpg';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
+import { cyan } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -29,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
    },
 
    overlay: {
-      marginTop: '12rem',
-      marginLeft: '2rem',
+      marginTop: '16rem',
+      marginLeft: '4rem',
       background: 'rgb(255,255,255, 0.85)',
       borderRadius: 10,
       height: 'auto',
@@ -71,8 +72,9 @@ const useStyles = makeStyles((theme) => ({
    },
 
    btnJob: {
-      paddingBottom: '5rem',
-      color: 'orange',
+      '&:hover': {
+         backgroundColor: '#80deea',
+      },
    },
 }));
 
@@ -88,14 +90,14 @@ function Home() {
                         className={classes.subHeader}
                         variant="h4"
                         component="h4"
-                        sx={{ fontWeight: 700 }}
+                        sx={{ fontWeight: 700, ml: 2 }}
                      >
                         Looking for a new career?
                      </Typography>
                      <Typography
                         variant="h1"
                         component="h1"
-                        sx={{ fontWeight: 700 }}
+                        sx={{ fontWeight: 700, ml: 2, mb: -1.5 }}
                         className={classes.header}
                      >
                         IT STARTS HERE
@@ -103,8 +105,9 @@ function Home() {
                      <Link to={'/jobs'} className={classes.link}>
                         <Button
                            variant="contained"
-                           color="error"
-                           sx={{ fontWeight: 'bold', fontSize: 18 }}
+                           color='btnColor'
+                           sx={{ fontWeight: 'bold', fontSize: 18, mb: 2, ml: 2 }}
+                           className={classes.btnJob}
                         >
                            Find Jobs
                         </Button>
