@@ -50,14 +50,8 @@ const useStyles = makeStyles((theme) => ({
 
 function Jobs() {
    const [jobs, setJobs] = useState([]);
-   const [filteredJobs, setFilteredJobs] = useState([]);
    const [searchText, setSearchText] = useState('');
 
-   const handleSubmit = (e) => {
-      if (e.key === 'Enter') {
-         console.log(data.filter((items) => items.position[0] === 'J'));
-      }
-   };
    const handleSearch = (e) => {
       console.log(e.target.value);
       setSearchText(e.target.value);
@@ -67,18 +61,15 @@ function Jobs() {
       setJobs(data);
    }, []);
 
-   useEffect(() => {
-      setFilteredJobs([]);
-      jobs.filter((job) => {
-         if (job.position.toLowerCase().includes(searchText.toLowerCase())) {
-            setFilteredJobs((filteredJobs) => [...filteredJobs, job]);
-         }
-      });
-   }, [searchText]);
+   function search(jobs) {
+      return jobs.filter((job) =>
+         job.position.toLowerCase().includes(searchText.toLocaleLowerCase())
+      );
+   }
    const classes = useStyles();
    return (
       <Box sx={{ mt: 10 }} className={classes.container}>
-         <SearchBar handleSubmit={handleSubmit} handleSearch={handleSearch} />
+         <SearchBar handleSearch={handleSearch} />
          <Box sx={{ mt: 5, display: 'flex' }} className={classes.mainContainer}>
             <Box className={classes.container2}>
                <FormControl sx={{ m: 3 }} className={classes.formControl1}>
@@ -117,9 +108,7 @@ function Jobs() {
                      <Grid xs={2}>matches</Grid>
                   </Grid>
                   <Grid>
-                     {filteredJobs.map((job) => (
-                        <JobBoard job={job} key={job.id} />
-                     ))}
+                     <JobBoard jobs={search(jobs)} />
                   </Grid>
                </Grid>
                <Pagination />
