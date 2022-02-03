@@ -2,7 +2,7 @@
    {
       "id": 1,
       "position": "Javascript Web Developer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$50290.35",
       "duration": "6 months",
       "language": ["HTML", "CSS", "Javascript"],
@@ -13,7 +13,7 @@
    {
       "id": 2,
       "position": "Php Developer",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$49938.98",
       "duration": "12 months",
       "language": ["Php", "Laravel"],
@@ -24,7 +24,7 @@
    {
       "id": 3,
       "position": "Full-Stack Web Developer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$44681.83",
       "duration": "18 months",
       "language": ["HTML", "CSS", "Javascript", "MongoDB", "NodeJS"],
@@ -35,7 +35,7 @@
    {
       "id": 4,
       "position": "Front-End Web Developer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$67342.53",
       "duration": "24 months",
       "language": ["HTML", "CSS", "Javascript", "React"],
@@ -46,7 +46,7 @@
    {
       "id": 5,
       "position": "Back-End Web Developer",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$62281.17",
       "duration": "1 year",
       "language": ["Ruby on Rails", "Php"],
@@ -57,7 +57,7 @@
    {
       "id": 6,
       "position": "Senior Web Developer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$94142.69",
       "duration": "8months",
       "language": ["Javascript","React", "NodeJS", "Pyton"],
@@ -68,7 +68,7 @@
    {
       "id": 7,
       "position": "React Engineer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$71211.35",
       "duration": "",
       "language": ["React", "Next.JS"],
@@ -79,7 +79,7 @@
    {
       "id": 8,
       "position": "Java Web Dev",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$42936.40",
       "duration": "6 months",
       "language": ["Java", "Spring MVC", "SQL", "NoSQL"],
@@ -90,7 +90,7 @@
    {
       "id": 9,
       "position": "Mid-Level Software Engineer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$86338.25",
       "duration": "12 months",
       "language": ["Javascript", "React", "NoSQL", "NodeJS"],
@@ -101,7 +101,7 @@
    {
       "id": 10,
       "position": "Looking For Junior Web Dev",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$64282.45",
       "duration": "18 months",
       "language": ["HTML", "CSS", "Javascript"],
@@ -112,7 +112,7 @@
    {
       "id": 11,
       "position": "Experienced Back-end Engineer for NodeJS",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$52630.48",
       "duration": "24 months",
       "language": ["React", "NodeJS"],
@@ -123,7 +123,7 @@
    {
       "id": 12,
       "position": "Team Lead Position (Full Stack Engineer)",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$80379.56",
       "duration": "1 year",
       "language": ["Java", "Ruby on Rails", "C#"],
@@ -134,7 +134,7 @@
    {
       "id": 13,
       "position": "Javascript Web Developer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$64759.27",
       "duration": "8months",
       "language": ["HTML", "CSS","Sass", "Javascript"],
@@ -145,7 +145,7 @@
    {
       "id": 14,
       "position": "Php Developer",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$90420.00",
       "duration": "",
       "language": ["Php", "Laravel8"],
@@ -156,7 +156,7 @@
    {
       "id": 15,
       "position": "Full-Stack Web Developer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$87292.77",
       "duration": "6 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -167,7 +167,7 @@
    {
       "id": 16,
       "position": "Front-End Web Developer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$72070.18",
       "duration": "12 months",
       "language": ["HTML", "CSS", "Javascript", "React"],
@@ -178,7 +178,7 @@
    {
       "id": 17,
       "position": "Back-End Web Developer",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$84687.41",
       "duration": "18 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -189,7 +189,7 @@
    {
       "id": 18,
       "position": "Senior Web Developer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$38760.45",
       "duration": "24 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -200,7 +200,7 @@
    {
       "id": 19,
       "position": "React Engineer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$40882.30",
       "duration": "1 year",
       "language": ["React", "Sass", "Gatsby"],
@@ -211,7 +211,7 @@
    {
       "id": 20,
       "position": "Java Web Dev",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$83785.05",
       "duration": "8months",
       "language": ["Java"],
@@ -222,7 +222,7 @@
    {
       "id": 21,
       "position": "Mid-Level Software Engineer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$65320.85",
       "duration": "",
       "language": ["HTML", "CSS", "watermelon"],
@@ -233,7 +233,7 @@
    {
       "id": 22,
       "position": "Looking For Junior Web Dev",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$52961.98",
       "duration": "6 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -244,7 +244,7 @@
    {
       "id": 23,
       "position": "Experienced Back-end Engineer for NodeJS",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$91229.51",
       "duration": "12 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -255,7 +255,7 @@
    {
       "id": 24,
       "position": "Team Lead Position (Full Stack Engineer)",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$63735.78",
       "duration": "18 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -266,7 +266,7 @@
    {
       "id": 25,
       "position": "Javascript Web Developer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$38506.54",
       "duration": "24 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -277,7 +277,7 @@
    {
       "id": 26,
       "position": "Php Developer",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$85275.17",
       "duration": "1 year",
       "language": ["HTML", "CSS", "watermelon"],
@@ -288,7 +288,7 @@
    {
       "id": 27,
       "position": "Full-Stack Web Developer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$37319.86",
       "duration": "8months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -299,7 +299,7 @@
    {
       "id": 28,
       "position": "Front-End Web Developer",
-      "category": ["Front-End Developer"],
+      "category": ["Front-End"],
       "compensation": "$78917.20",
       "duration": "",
       "language": ["HTML", "CSS", "watermelon"],
@@ -310,7 +310,7 @@
    {
       "id": 29,
       "position": "Back-End Web Developer",
-      "category": ["Back-End Developer"],
+      "category": ["Back-End"],
       "compensation": "$69252.04",
       "duration": "6 months",
       "language": ["HTML", "CSS", "watermelon"],
@@ -321,7 +321,7 @@
    {
       "id": 30,
       "position": "Senior Web Developer",
-      "category": ["Full-Stack Web Developer"],
+      "category": ["Full-Stack"],
       "compensation": "$47259.31",
       "duration": "12 months",
       "language": ["HTML", "CSS", "watermelon"],

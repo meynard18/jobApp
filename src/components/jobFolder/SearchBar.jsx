@@ -34,9 +34,15 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-const categories = ['Front-end', 'Back-end', 'Full-stack'];
+const categories = ['Any', 'Front-End', 'Back-End', 'Full-Stack'];
 
-function SearchBar({ handleSubmit, handleSearch, searchText }) {
+function SearchBar({
+   handleSearch,
+   searchText,
+   handleCategory,
+   category,
+   handleKeyDown,
+}) {
    const classes = useStyles();
 
    return (
@@ -49,14 +55,15 @@ function SearchBar({ handleSubmit, handleSearch, searchText }) {
                   //  id="demo-simple-select"
                   //  value=""
                   label="category"
-                  labelId="categories"
+                  // labelId="categories"
                   variant="outlined"
                   sx={{ borderRadius: 5 }}
                   className={classes.inputStyle}
-                  //  onChange={handleCategoryChange}
+                  onChange={handleCategory}
+                  value={category}
                >
                   {categories.map((item, index) => (
-                     <MenuItem value={10} key={index}>
+                     <MenuItem value={index} key={index}>
                         {item}
                      </MenuItem>
                   ))}
@@ -71,7 +78,7 @@ function SearchBar({ handleSubmit, handleSearch, searchText }) {
                   label="Search for Jobs"
                   variant="outlined"
                   onChange={handleSearch}
-                  onKeyPress={handleSubmit}
+                  onKeyPress={handleKeyDown}
                   value={searchText}
                   sx={{ borderRadius: 5 }}
                ></OutlinedInput>

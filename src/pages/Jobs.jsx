@@ -48,28 +48,68 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
+const categories = ['Any', 'Front-End', 'Back-End', 'Full-Stack'];
+
 function Jobs() {
-   const [jobs, setJobs] = useState([]);
+   const [jobs, setJobs] = useState(data);
    const [searchText, setSearchText] = useState('');
+   const [category, setCategory] = useState();
+
+   const handleCategory = (e) => {
+      setCategory(e.target.value);
+      setJobs(data);
+   };
 
    const handleSearch = (e) => {
       console.log(e.target.value);
       setSearchText(e.target.value);
    };
 
+   const handleKeyDown = (e) => {
+      if (e.key === 'Enter') {
+         console.log('enter');
+         setJobs(
+            jobs.filter((job) =>
+               job.position
+                  .toLowerCase()
+                  .includes(searchText.toLocaleLowerCase())
+            )
+         );
+      }
+
+      if (searchText === '') {
+         ////// NEEDs to be revised///
+
+         setJobs(data)
+      }
+   };
+   useEffect(() => {
+      if (category !== 0)
+         setJobs(
+            jobs.filter((job) => job.category[0] === categories[category])
+         );
+      else setJobs(data);
+   }, [category]);
+
    useEffect(() => {
       setJobs(data);
+      // setFilteredJobs(data)
    }, []);
 
-   function search(jobs) {
-      return jobs.filter((job) =>
-         job.position.toLowerCase().includes(searchText.toLocaleLowerCase())
-      );
+   function search() {
+      // setJobs(jobs.filter((job) =>
+      //    job.position.toLowerCase().includes(searchText.toLocaleLowerCase())
+      // ));
    }
    const classes = useStyles();
    return (
       <Box sx={{ mt: 10 }} className={classes.container}>
-         <SearchBar handleSearch={handleSearch} />
+         <SearchBar
+            handleSearch={handleSearch}
+            handleCategory={handleCategory}
+            handleKeyDown={handleKeyDown}
+            category={category}
+         />
          <Box sx={{ mt: 5, display: 'flex' }} className={classes.mainContainer}>
             <Box className={classes.container2}>
                <FormControl sx={{ m: 3 }} className={classes.formControl1}>
@@ -108,7 +148,7 @@ function Jobs() {
                      <Grid xs={2}>matches</Grid>
                   </Grid>
                   <Grid>
-                     <JobBoard jobs={search(jobs)} />
+                     <JobBoard jobs={jobs} />
                   </Grid>
                </Grid>
                <Pagination />
