@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import SearchBar from '../components/jobFolder/SearchBar';
-import {
-   Box,
-   Grid,
-   Typography,
-   FormControl,
-   FormControlLabel,
-   RadioGroup,
-   FormLabel,
-   Radio,
-} from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import Pagination from '../components/jobFolder/Pagination';
 import data from '../data/Jobs.json';
 import JobBoard from '../components/jobFolder/JobBoard';
+import SortJobs from '../components/jobFolder/SortJobs';
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -49,25 +41,35 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const categories = ['Any', 'Front-End', 'Back-End', 'Full-Stack'];
+const sortItem = ['Compensation', 'Date', 'Duration'];
 
 function Jobs() {
-   const [jobs, setJobs] = useState(data);
+   const [jobs, setJobs] = useState([]);
    const [searchText, setSearchText] = useState('');
-   const [category, setCategory] = useState();
+   const [category, setCategory] = useState(0);
+   const [sortJobs, setSortJobs] = useState('');
+
+   const handleSortChange = (e) => {
+      setSortJobs(e.target.value);
+      setJobs(jobs);
+   };
+
+   const handleOnClick = (e) => {
+      console.log(sortItem[sortJobs]); /// delayed
+      // setJobs(jobs.sort((a, b) => b.compensation - a.compensation));
+   };
 
    const handleCategory = (e) => {
       setCategory(e.target.value);
-      setJobs(data);
+      setJobs(jobs);
    };
 
    const handleSearch = (e) => {
-      console.log(e.target.value);
       setSearchText(e.target.value);
    };
 
    const handleKeyDown = (e) => {
       if (e.key === 'Enter') {
-         console.log('enter');
          setJobs(
             jobs.filter((job) =>
                job.position
@@ -76,31 +78,56 @@ function Jobs() {
             )
          );
       }
-
       if (searchText === '') {
-         ////// NEEDs to be revised///
-
-         setJobs(data)
+         if (e.key) setJobs(data);
       }
    };
+   useEffect(() => {
+      console.log(sortJobs);
+      console.log(sortItem[sortJobs]);
+      // if (sortItem[sortJobs] === 'Compensation') {
+      //    console.log('compensation in useEffect');
+      //     setJobs(jobs.sort((a, b) => b.compensation - a.compensation));
+      // } else if (sortItem[sortJobs] === 'Date') console.log('Date is here');
+      // else if (sortItem[sortJobs] === 'Duration') {
+      //    console.log('Duration is last');
+      //    setJobs(jobs.sort((a,b) => a.duration - b.duration))
+      // }
+
+      setJobs(
+         jobs.sort((a, b) => {
+            if (sortItem[sortJobs] === 'Compensation')
+               return b.compensation - a.compensation;
+            else if (sortItem[sortJobs] === 'Duration')
+               return b.duration - a.duration;
+         })
+      );
+
+      // console.log(sortItem[sortJobs])
+      // switch (sortItem[sortJobs]) {
+      //    case 'Compensation':
+      //       console.log('compensation from useeffect')
+      //       break;
+      //    case 'Date':
+      //       console.log('date')
+      //       break;
+      //    case 'Duration':
+      //       break;
+      // }
+   }, [sortJobs]);
+
    useEffect(() => {
       if (category !== 0)
          setJobs(
             jobs.filter((job) => job.category[0] === categories[category])
          );
-      else setJobs(data);
+      else setJobs(jobs);
    }, [category]);
 
    useEffect(() => {
       setJobs(data);
-      // setFilteredJobs(data)
    }, []);
 
-   function search() {
-      // setJobs(jobs.filter((job) =>
-      //    job.position.toLowerCase().includes(searchText.toLocaleLowerCase())
-      // ));
-   }
    const classes = useStyles();
    return (
       <Box sx={{ mt: 10 }} className={classes.container}>
@@ -111,33 +138,11 @@ function Jobs() {
             category={category}
          />
          <Box sx={{ mt: 5, display: 'flex' }} className={classes.mainContainer}>
-            <Box className={classes.container2}>
-               <FormControl sx={{ m: 3 }} className={classes.formControl1}>
-                  <FormLabel id="demo-radio-buttons-group-label">
-                     Sort
-                  </FormLabel>
-                  <RadioGroup
-                     aria-labelledby="demo-radio-buttons-group-label"
-                     name="radio-buttons-group"
-                  >
-                     <FormControlLabel
-                        value="compensation"
-                        control={<Radio />}
-                        label="Compensation"
-                     />
-                     <FormControlLabel
-                        value="date"
-                        control={<Radio />}
-                        label="Date"
-                     />
-                     <FormControlLabel
-                        value="duration"
-                        control={<Radio />}
-                        label="Duration"
-                     />
-                  </RadioGroup>
-               </FormControl>
-            </Box>
+            <SortJobs
+               handleSortChange={handleSortChange}
+               sortJobs={sortJobs}
+               handleOnClick={handleOnClick}
+            />
 
             <Box className={classes.container1} sx={{ minHeight: '100vh' }}>
                <Grid>

@@ -52,10 +52,7 @@ function SearchBar({
                <InputLabel htmlFor="categories">Category</InputLabel>
                <Select
                   labelId="demo-simple-select-label"
-                  //  id="demo-simple-select"
-                  //  value=""
                   label="category"
-                  // labelId="categories"
                   variant="outlined"
                   sx={{ borderRadius: 5 }}
                   className={classes.inputStyle}
