@@ -45,23 +45,18 @@ const sortItem = ['Compensation', 'Date', 'Duration'];
 
 function Jobs() {
    const [jobs, setJobs] = useState([]);
-   const [searchText, setSearchText] = useState('');
+   const [searchText, setSearchText] = useState([]);
    const [category, setCategory] = useState(0);
-   const [sortJobs, setSortJobs] = useState('');
+   const [sortJobs, setSortJobs] = useState(null);
+   const [sortedJobs, setSortedJobs] = useState([]);
 
-   const handleSortChange = (e) => {
-      setSortJobs(e.target.value);
-      setJobs(jobs);
-   };
-
-   const handleOnClick = (e) => {
-      console.log(sortItem[sortJobs]); /// delayed
-      // setJobs(jobs.sort((a, b) => b.compensation - a.compensation));
-   };
+   const handleSortJobs = (e) => {
+      setSortJobs(e.target.value)
+   }
 
    const handleCategory = (e) => {
       setCategory(e.target.value);
-      setJobs(jobs);
+      setJobs(data);
    };
 
    const handleSearch = (e) => {
@@ -83,45 +78,31 @@ function Jobs() {
       }
    };
    useEffect(() => {
-      console.log(sortJobs);
-      console.log(sortItem[sortJobs]);
-      // if (sortItem[sortJobs] === 'Compensation') {
-      //    console.log('compensation in useEffect');
-      //     setJobs(jobs.sort((a, b) => b.compensation - a.compensation));
-      // } else if (sortItem[sortJobs] === 'Date') console.log('Date is here');
-      // else if (sortItem[sortJobs] === 'Duration') {
-      //    console.log('Duration is last');
-      //    setJobs(jobs.sort((a,b) => a.duration - b.duration))
-      // }
-
-      setJobs(
-         jobs.sort((a, b) => {
-            if (sortItem[sortJobs] === 'Compensation')
+      const _sortedJobs = [...jobs].sort((a, b) => {
+         switch (sortItem[sortJobs]) {
+            case 'Compensation':
                return b.compensation - a.compensation;
-            else if (sortItem[sortJobs] === 'Duration')
+            case 'Date':
+               return new Date(b.date) - new Date(a.date);
+            case 'Duration':
                return b.duration - a.duration;
-         })
-      );
+         }
+      });
 
-      // console.log(sortItem[sortJobs])
-      // switch (sortItem[sortJobs]) {
-      //    case 'Compensation':
-      //       console.log('compensation from useeffect')
-      //       break;
-      //    case 'Date':
-      //       console.log('date')
-      //       break;
-      //    case 'Duration':
-      //       break;
-      // }
+      setSortedJobs(_sortedJobs);
    }, [sortJobs]);
+
+   useEffect(() => {
+      if (sortedJobs.length) setJobs(sortedJobs);
+      else setJobs(jobs);
+   }, [sortedJobs]);
 
    useEffect(() => {
       if (category !== 0)
          setJobs(
             jobs.filter((job) => job.category[0] === categories[category])
          );
-      else setJobs(jobs);
+      else setJobs(data);
    }, [category]);
 
    useEffect(() => {
@@ -138,11 +119,7 @@ function Jobs() {
             category={category}
          />
          <Box sx={{ mt: 5, display: 'flex' }} className={classes.mainContainer}>
-            <SortJobs
-               handleSortChange={handleSortChange}
-               sortJobs={sortJobs}
-               handleOnClick={handleOnClick}
-            />
+            <SortJobs  sortJobs={sortJobs} handleSortJobs={handleSortJobs} />
 
             <Box className={classes.container1} sx={{ minHeight: '100vh' }}>
                <Grid>

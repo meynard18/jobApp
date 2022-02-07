@@ -7,7 +7,7 @@
       "duration": 6,
       "language": ["HTML", "CSS", "Javascript"],
       "company": "Talane",
-      "date": "2021-11-17",
+      "date": "2021-11-17" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -18,7 +18,7 @@
       "duration": 12,
       "language": ["Php", "Laravel"],
       "company": "Tagpad",
-      "date": "2021-04-23",
+      "date": "2021-04-23" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -29,7 +29,7 @@
       "duration": 18,
       "language": ["HTML", "CSS", "Javascript", "MongoDB", "NodeJS"],
       "company": "Roodel",
-      "date": "2021-04-13",
+      "date": "2021-04-13" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -40,7 +40,7 @@
       "duration": 24,
       "language": ["HTML", "CSS", "Javascript", "React"],
       "company": "Fiveclub",
-      "date": "2021-06-17",
+      "date": "2021-06-17" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -51,7 +51,7 @@
       "duration": 1,
       "language": ["Ruby on Rails", "Php"],
       "company": "Bluejam",
-      "date": "2021-10-16",
+      "date": "2021-10-16" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -62,7 +62,7 @@
       "duration": 8,
       "language": ["Javascript","React", "NodeJS", "Pyton"],
       "company": "Meembee",
-      "date": "2021-06-29",
+      "date": "2021-06-29" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -73,7 +73,7 @@
       "duration": 3,
       "language": ["React", "Next.JS"],
       "company": "Photofeed",
-      "date": "2021-04-10",
+      "date": "2021-04-10" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -84,7 +84,7 @@
       "duration": 6,
       "language": ["Java", "Spring MVC", "SQL", "NoSQL"],
       "company": "Kwideo",
-      "date": "2021-07-20",
+      "date": "2021-07-20" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -95,7 +95,7 @@
       "duration": 12,
       "language": ["Javascript", "React", "NoSQL", "NodeJS"],
       "company": "Thoughtmix",
-      "date": "2021-11-10",
+      "date": "2021-11-10" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -106,7 +106,7 @@
       "duration": 18,
       "language": ["HTML", "CSS", "Javascript"],
       "company": "Youfeed",
-      "date": "2021-07-31",
+      "date": "2021-07-31" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -117,7 +117,7 @@
       "duration": 24,
       "language": ["React", "NodeJS"],
       "company": "Topicshots",
-      "date": "2021-03-19",
+      "date": "2021-03-19" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -128,7 +128,7 @@
       "duration": 1,
       "language": ["Java", "Ruby on Rails", "C#"],
       "company": "Realbuzz",
-      "date": "2021-11-08",
+      "date": "2021-11-08" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -139,7 +139,7 @@
       "duration": 8,
       "language": ["HTML", "CSS","Sass", "Javascript"],
       "company": "Mycat",
-      "date": "2022-01-03",
+      "date": "2022-01-03" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -150,7 +150,7 @@
       "duration": 14,
       "language": ["Php", "Laravel8"],
       "company": "Twitterbeat",
-      "date": "2021-06-20",
+      "date": "2021-06-20" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -161,7 +161,7 @@
       "duration": 6,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Blogtags",
-      "date": "2021-10-01",
+      "date": "2021-10-01" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -172,7 +172,7 @@
       "duration": 12,
       "language": ["HTML", "CSS", "Javascript", "React"],
       "company": "Photobug",
-      "date": "2022-01-03",
+      "date": "2022-01-03" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -183,7 +183,7 @@
       "duration": 18,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Shuffletag",
-      "date": "2021-02-27",
+      "date": "2021-02-27" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -194,7 +194,7 @@
       "duration": 24,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Jabberbean",
-      "date": "2021-09-03",
+      "date": "2021-09-03" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -205,7 +205,7 @@
       "duration": 1,
       "language": ["React", "Sass", "Gatsby"],
       "company": "Skimia",
-      "date": "2021-02-11",
+      "date": "2021-02-11" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -216,7 +216,7 @@
       "duration": 8,
       "language": ["Java"],
       "company": "Photospace",
-      "date": "2021-09-25",
+      "date": "2021-09-25" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -227,7 +227,7 @@
       "duration": 22,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Zoomdog",
-      "date": "2021-04-13",
+      "date": "2021-04-13" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -238,7 +238,7 @@
       "duration": 6,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Trudoo",
-      "date": "2021-03-08",
+      "date": "2021-03-08" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -249,7 +249,7 @@
       "duration": 12,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Aimbo",
-      "date": "2021-08-16",
+      "date": "2021-08-16" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -260,7 +260,7 @@
       "duration": 18,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Babblestorm",
-      "date": "2021-04-07",
+      "date": "2021-04-07" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -271,7 +271,7 @@
       "duration": 24,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Flipopia",
-      "date": "2021-12-16",
+      "date": "2021-12-16" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -282,7 +282,7 @@
       "duration": 1,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Mudo",
-      "date": "2021-09-15",
+      "date": "2021-09-15" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -293,7 +293,7 @@
       "duration": 8,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Talane",
-      "date": "2021-06-27",
+      "date": "2021-06-27" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -304,7 +304,7 @@
       "duration": 6,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Devcast",
-      "date": "2021-07-12",
+      "date": "2021-07-12" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    },
    {
@@ -315,7 +315,7 @@
       "duration": 18,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Divape",
-      "date": "2021-11-25",
+      "date": "2021-11-25" ,
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
    },
    {
@@ -326,7 +326,7 @@
       "duration": 12,
       "language": ["HTML", "CSS", "watermelon"],
       "company": "Meevee",
-      "date": "2021-09-16",
+      "date": "2021-09-16" ,
       "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga."
    }
 ]

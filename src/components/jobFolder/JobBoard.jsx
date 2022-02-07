@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
    position: {
       color: theme.palette.third.fourth,
    },
-   
+
    hoverEffect: {
       padding: '.5rem',
       '&:hover': {
@@ -37,12 +37,15 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: '.4rem',
    },
 }));
+let money = '$';
+let month = 'months';
+
 
 function JobBoard(props) {
    const classes = useStyles();
    return (
       <Box sx={{ m: 1 }}>
-         {props.jobs.map((job) => (
+         {props.jobs.map((job, index) => (
             <>
                <Box className={classes.hoverEffect}>
                   <Typography
@@ -64,12 +67,12 @@ function JobBoard(props) {
                      <span className={classes.nameValue}>
                         Rate:{' '}
                         <span className={classes.value}>
-                           {job.compensation}
+                           {money + job.compensation}
                         </span>
                      </span>
                      <span className={classes.nameValue}>
                         Duration:{' '}
-                        <span className={classes.value}>{job.duration}</span>
+                        <span className={classes.value}>{job.duration + ' '+ month}</span>
                      </span>
                      <span className={classes.nameValue}>
                         Posted:{' '}

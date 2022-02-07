@@ -1,8 +1,6 @@
 import React from 'react';
 import {
    Box,
-   Grid,
-   Typography,
    FormControl,
    FormControlLabel,
    RadioGroup,
@@ -25,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const sortItem = ['Compensation', 'Date', 'Duration'];
 
-function SortJobs({ handleSortChange, handleOnClick, sortJobs }) {
+function SortJobs({ sortJobs, handleSortJobs }) {
    const classes = useStyles();
    return (
       <Box className={classes.container2}>
@@ -34,15 +32,15 @@ function SortJobs({ handleSortChange, handleOnClick, sortJobs }) {
             <RadioGroup
                aria-labelledby="demo-radio-buttons-group-label"
                name="radio-buttons-group"
-               onChange={handleSortChange}
-                value={sortJobs}
+               value={sortJobs}
+               onChange={handleSortJobs}
             >
                {sortItem.map((item, index) => (
                   <FormControlLabel
                      control={<Radio />}
                      label={item}
-                     onClick={handleOnClick}
                      value={index}
+                     key={item + index}
                   />
                ))}
             </RadioGroup>
