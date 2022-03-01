@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
    Select,
    MenuItem,
@@ -30,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-// const categories = ['Any', 'Front-End', 'Back-End', 'Full-Stack'];
-
 function SearchBar() {
    const {
       jobs,
@@ -42,15 +40,18 @@ function SearchBar() {
       setSearchText,
       category,
       setCategory,
+      categoryLabel,
    } = useContext(JobsContext);
+   const jobCategories = Array.from(
+      new Set(categoryLabel.map((item) => item.category))
+   );
 
    const handleSearch = (e) => {
-      console.log(e.target.value);
       setSearchText(e.target.value);
    };
 
    const handleKeyDown = (e) => {
-      const reg = /[a-zA-Z]/g;
+      const reg = /[a-zA-Z0-9]/g;
       if (e.key === 'Enter') {
          console.log('enter');
          setJobs(
@@ -61,43 +62,42 @@ function SearchBar() {
                      .includes(searchText.toLocaleLowerCase()) ||
                   job.description
                      .toLowerCase()
+                     .includes(searchText.toLocaleLowerCase()) ||
+                  job.candidate_required_location
+                     .toLowerCase()
                      .includes(searchText.toLocaleLowerCase())
             )
          );
       }
-      if (searchText === '') {
-         if (e.key.match(reg)) setJobs(data);
+      if (searchText === '' && e.key.match(reg)) {
+         category === 0
+            ? setJobs(data)
+            : setJobs(
+                 data.filter((job) =>
+                    job.category.toLowerCase().includes(category.toLowerCase())
+                 )
+              );
       }
    };
 
    const handleCategory = (e) => {
       setCategory(e.target.value);
-      console.log(e.target.value);
-      // alert(e.target.value);
-      // console.log('its clicking just fine');
-      // setJobs(jobs);
+      setJobs(data);
    };
 
    const classes = useStyles();
 
-   // useEffect(() => {
-   //    if (category !== 0)
-   //       setJobs(
-   //          jobs.filter((job) => job.category[0] === categories[category])
-   //       );
-   //    else setJobs(data);
-   // }, [category]);
+   useEffect(() => {
+      if (category !== 0) {
+         setJobs(
+            jobs.filter((job) =>
+               job.category.toLowerCase().includes(category.toLocaleLowerCase())
+            )
+         );
+      } else setJobs(data);
+   }, [category]);
 
-   // useEffect(() => {
-   //    if (category !== 0) {
-   //       setJobs(
-   //          jobs.filter(
-   //             (job) =>
-   //                job.category.toLowerCase() === category.toLocaleLowerCase()
-   //          )
-   //       );
-   //    } else setJobs(data);
-   // }, [category]);
+   useEffect(() => {}, [jobs]);
 
    return (
       <>
@@ -112,20 +112,13 @@ function SearchBar() {
                   sx={{ borderRadius: 5 }}
                   className={classes.inputStyle}
                   onChange={handleCategory}
-                  value={''}
+                  value={category}
                >
-                  {/* {category.map((item) => (
-                     <MenuItem>{item}</MenuItem>
-                  ))} */}
                   <MenuItem value={0}>{'Any'}</MenuItem>
-                  {/* {jobs.filter((item, idx) => (
-                     <MenuItem>
-                        {item.category.indexOf(item.category) === idx}
-                     </MenuItem>
-                  ))} */}
-                  {jobs.map((item, i) => (
-                     <MenuItem key={item.id} value={item.category}>
-                        {item.category}
+
+                  {jobCategories.map((item, idx) => (
+                     <MenuItem key={idx} value={item}>
+                        {item}
                      </MenuItem>
                   ))}
                </Select>
@@ -139,6 +132,7 @@ function SearchBar() {
                   label="Search for Jobs"
                   variant="outlined"
                   onChange={handleSearch}
+                  placeholder="Position Title, Location, Description"
                   onKeyPress={handleKeyDown}
                   value={searchText}
                   sx={{ borderRadius: 5 }}
