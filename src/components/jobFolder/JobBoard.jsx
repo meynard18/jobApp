@@ -1,8 +1,6 @@
 import { React, useContext, useState } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import data from '../../data/Jobs.json';
-import JobDetails from './JobDetails';
 import { JobsContext } from './JobsContext';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,19 +45,98 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-function JobBoard({ pagesVisited, jobsPerPage, setJobDetails }) {
-   const handleJobDetails = (job) => {
-      console.log(job);
-      setJobDetails([job]);
-      console.log(setJobDetails([job]));
-   };
+function JobBoard() {
+   //    const handleJobDetails = (job) => {
+   //       console.log(job);
+   //       setJobDetails([job]);
+   //       console.log(setJobDetails([job]));
+   //    };
 
    const classes = useStyles();
-   const jobs = useContext(JobsContext);
-   const dot = '. . . ';
+   const {
+      jobs,
+      setJobs,
+      errorMessage,
+      setErrorMessage,
+      pagesVisited,
+      jobsPerPage,
+      setJobDetails,
+      searchText,
+   } = useContext(JobsContext);
+   const dot = '. . ';
+
+   // const salaryConvert = () => {
+   //    return jobs.map((item) =>
+   //       item === ' ' ? 'Depends On Experience' : item.salary
+   //    );
+   // };
+
+   // salaryConvert();
+   const displayJobs = jobs
+      .slice(pagesVisited, pagesVisited + jobsPerPage)
+      .map((job) => (
+         <>
+            <Box className={classes.hoverEffect} sx={{ mb: 3 }}>
+               <Typography
+                  className={classes.position}
+                  sx={{ fontWeight: 600 }}
+               >
+                  {job.title}
+                  {/* {<img src={job.company_logo} />} */}
+               </Typography>
+               <Typography
+                  className={classes.description}
+                  sx={{ fontWeight: 400, mt: 2, mb: 3 }}
+               >
+                  {`${job.description
+                     .replace(/(<([^>]+)>)/gi, '')
+                     .slice(0, 220)}${dot.repeat(2)}`}
+               </Typography>
+               <Typography>
+                  {job.tags.map((languages, i) =>
+                     i < 6 ? (
+                        <span className={classes.span} key={i}>
+                           {languages}
+                        </span>
+                     ) : (
+                        ''
+                     )
+                  )}
+               </Typography>
+
+               <Typography sx={{ fontWeight: 600, mt: 2 }}>
+                  <span className={classes.nameValue}>
+                     Salary:{' '}
+                     <span className={classes.value}>
+                        {job.salary === ''
+                           ? 'Depends on Experience'
+                           : job.salary}
+                     </span>
+                     <span></span>
+                  </span>
+                  <span className={classes.nameValue}>
+                     Location:{' '}
+                     <span className={classes.value}>
+                        {job.candidate_required_location === ''
+                           ? 'Remote'
+                           : job.candidate_required_location.length < 10
+                           ? job.candidate_required_location
+                           : job.candidate_required_location.slice(0, 20)}
+                     </span>
+                  </span>
+                  <span className={classes.nameValue}>
+                     Posted:{' '}
+                     <span className={classes.value}>
+                        {job.publication_date}
+                     </span>
+                  </span>
+               </Typography>
+            </Box>
+         </>
+      ));
 
    return (
-      <Box sx={{ mt: 2, ml: 2 }}>
+      <Box sx={{ mt: 1, ml: 2 }}>
          <Grid container sx={{ mt: 3 }} className={classes.resultContainer}>
             <Grid xs={8} sx={{ ml: 4, fontWeight: 500, fontSize: 18 }}>
                Result:&nbsp;{' '}
@@ -69,105 +146,8 @@ function JobBoard({ pagesVisited, jobsPerPage, setJobDetails }) {
             </Grid>
             <Grid xs={2}>matches</Grid>
          </Grid>
-         {console.log(jobs.map((item) => item))}
-         {jobs.map((job) => (
-            <>
-               <Box>
-                  <Typography
-                     className={classes.position}
-                     sx={{ fontWeight: 600 }}
-                  >
-                     {job.title}
-                  </Typography>
-                  <Typography
-                     className={classes.description}
-                     sx={{ fontWeight: 400, mt: 2, mb: 2 }}
-                  >
-                     {/* {
-                        <div
-                           dangerouslySetInnerHTML={{
-                              __html: job.description.slice(0, 300),
-                           }}
-                        />
-                     } */}
-                     {
-                        <span
-                           dangerouslySetInnerHTML={{
-                              __html: `${job.description.slice(
-                                 0,
-                                 400
-                              )}${dot.repeat(3)}`,
-                           }}
-                        />
-                     }
-                  </Typography>
-                  <Typography>
-                     {console.log(job.tags)}
-                     {job.tags.map((languages, i) =>
-                        i < 6 ? (
-                           <span className={classes.span}>{languages}</span>
-                        ) : (
-                           ''
-                        )
-                     )}
-                  </Typography>
-
-                  <Typography sx={{ fontWeight: 600, mt: 2, mb: 1 }}>
-                     <span className={classes.nameValue}>
-                        Rate:{' '}
-                        <span className={classes.value}>
-                           {job.salary === '' ? 'negotiable' : job.salary}
-                        </span>
-                     </span>
-                     <span className={classes.nameValue}>
-                        Location:{' '}
-                        <span className={classes.value}>
-                           {job.candidate_required_location}
-                        </span>
-                     </span>
-                     <span className={classes.nameValue}>
-                        Posted:{' '}
-                        <span className={classes.value}>
-                           {job.publication_date}
-                        </span>
-                     </span>
-                  </Typography>
-               </Box>
-            </>
-         ))}
-         {/* {jobs.slice(pagesVisited, pagesVisited + jobsPerPage).map((job) => (
-            <>
-               <Box
-                  className={classes.hoverEffect}
-                //   key={job.id}
-                //   onClick={() => handleJobDetails(job)}
-               >
-  
-                  <Typography sx={{ fontWeight: 600, mt: 2, mb: 1 }}>
-                     <span className={classes.nameValue}>
-                        Rate:{' '}
-                        <span className={classes.value}>
-                           {job.compensation < 100
-                              ? job.compensation + ' /hour'
-                              : job.compensation + ' /yearly'}
-                        </span>
-                     </span>
-                     <span className={classes.nameValue}>
-                        Duration:{' '}
-                        <span className={classes.value}>
-                           {job.duration > 1
-                              ? job.duration + ' months'
-                              : job.duration + ' year'}
-                        </span>
-                     </span>
-                     <span className={classes.nameValue}>
-                        Posted:{' '}
-                        <span className={classes.value}>{job.date}</span>
-                     </span>
-                  </Typography>
-               </Box>
-            </>
-         ))} */}
+         <h1>{errorMessage}</h1>
+         {displayJobs}
       </Box>
    );
 }

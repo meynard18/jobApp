@@ -61,33 +61,6 @@ const useStyles = makeStyles((theme) => ({
 //       setJobs(jobs.reverse());
 //    };
 
-//    const handleSortJobs = (e) => {
-//       setSortJobs(e.target.value);
-//    };
-
-//    const handleCategory = (e) => {
-//       setCategory(e.target.value);
-//       setJobs(data);
-//    };
-
-//    const handleSearch = (e) => {
-//       setSearchText(e.target.value);
-//    };
-
-//    const handleKeyDown = (e) => {
-//       if (e.key === 'Enter') {
-//          setJobs(
-//             jobs.filter((job) =>
-//                job.position
-//                   .toLowerCase()
-//                   .includes(searchText.toLocaleLowerCase())
-//             )
-//          );
-//       }
-//       if (searchText === '') {
-//          if (e.key === 'Enter') setJobs(data);
-//       }
-//    };
 //    useEffect(() => {
 //       const _sortedJobs = [...jobs].sort((a, b) => {
 //          switch (sortItem[sortJobs]) {
@@ -108,17 +81,6 @@ const useStyles = makeStyles((theme) => ({
 //       else setJobs(jobs);
 //    }, [sortedJobs]);
 
-//    useEffect(() => {
-//       if (category !== 0)
-//          setJobs(
-//             jobs.filter((job) => job.category[0] === categories[category])
-//          );
-//       else setJobs(data);
-//    }, [category]);
-
-//    const jobsPerPage = 10;
-//    const pagesVisited = pageNumber * jobsPerPage;
-//    const pageCount = Math.ceil(jobs.length / jobsPerPage);
 //    return (
 //       <Box sx={{ mt: 10 }} className={classes.container}>
 //          <SearchBar
@@ -172,22 +134,78 @@ const useStyles = makeStyles((theme) => ({
 // export default Jobs;
 
 function Jobs() {
-   const classes = useStyles();
+   const [data, setData] = useState([]);
    const [jobs, setJobs] = useState([]);
-   useEffect(() => {
-      const fetchData = async () => {
-         const result = await axios(
-            `https://remotive.io/api/remote-jobs?limit=30`
-         );
+   const [searchText, setSearchText] = useState();
+   const [pageNumber, setPageNumber] = useState(0);
+   const [category, setCategory] = useState(0);
+   const [sortedJobs, setSortedJobs] = useState([]);
+   const [errorMessage, setErrorMessage] = useState('');
+   const [categoryLabel, setCategoryLabel] = useState([]);
+   const [isLoading, setIsLoading] = useState(false);
 
-         setJobs(result.data.jobs);
-      };
+   // const handlePage = (page) => {
+   //    setPageNumber(page - 1);
+   //    document.body.scrollTop = 0;
+   //    document.documentElement.scrollTop = 0;
+   // };
+
+   const jobsPerPage = 10;
+   const pagesVisited = pageNumber * jobsPerPage;
+   const pageCount = Math.ceil(jobs.length / jobsPerPage);
+
+   {
+      console.log(pageNumber);
+   }
+
+   const searchStates = {
+      categoryLabel,
+      setCategoryLabel,
+      data,
+      setData,
+      jobs,
+      setJobs,
+      searchText,
+      setSearchText,
+      category,
+      setCategory,
+      errorMessage,
+      setErrorMessage,
+      jobsPerPage,
+      pagesVisited,
+      pageCount,
+      pageNumber,
+      setPageNumber,
+      sortedJobs,
+      setSortedJobs,
+   };
+   const classes = useStyles();
+
+   const fetchData = async () => {
+      try {
+         const result = await axios(
+            `https://remotive.io/api/remote-jobs?limit=50`
+         );
+         // console.log(result.data.jobs.category.map((item) => item));
+         const {
+            resultData,
+            data: { jobs },
+         } = result;
+
+         setJobs(jobs);
+         setData(jobs);
+         setCategoryLabel(jobs);
+      } catch (error) {
+         setErrorMessage(error.message);
+      }
+   };
+   useEffect(() => {
       fetchData();
    }, []);
+
    return (
-      <JobsContext.Provider value={jobs}>
+      <JobsContext.Provider value={searchStates}>
          <Box className={classes.container}>
-            {console.log(jobs)}
             <SearchBar />
             <JobPosts />
          </Box>

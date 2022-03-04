@@ -41,6 +41,8 @@ function SearchBar() {
       category,
       setCategory,
       categoryLabel,
+
+      setPageNumber,
    } = useContext(JobsContext);
    const jobCategories = Array.from(
       new Set(categoryLabel.map((item) => item.category))
@@ -53,7 +55,6 @@ function SearchBar() {
    const handleKeyDown = (e) => {
       const reg = /[a-zA-Z0-9]/g;
       if (e.key === 'Enter') {
-         console.log('enter');
          setJobs(
             jobs.filter(
                (job) =>
@@ -68,6 +69,7 @@ function SearchBar() {
                      .includes(searchText.toLocaleLowerCase())
             )
          );
+         setPageNumber(0);
       }
       if (searchText === '' && e.key.match(reg)) {
          category === 0
@@ -94,6 +96,7 @@ function SearchBar() {
                job.category.toLowerCase().includes(category.toLocaleLowerCase())
             )
          );
+         setPageNumber(0);
       } else setJobs(data);
    }, [category]);
 
