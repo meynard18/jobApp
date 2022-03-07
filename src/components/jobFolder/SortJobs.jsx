@@ -11,7 +11,6 @@ import { makeStyles } from '@mui/styles';
 import SortRoundedIcon from '@mui/icons-material/SortRounded';
 import { useContext } from 'react';
 import { JobsContext } from './JobsContext';
-import Jobs from '../../pages/Jobs';
 
 const useStyles = makeStyles((theme) => ({
    container2: {
@@ -34,53 +33,71 @@ const useStyles = makeStyles((theme) => ({
 const jobType = ['Full-Time', 'Part-Time', 'Other'];
 
 function SortJobs() {
-   const { category, data, setJobs, jobs, sortedJobs, setSortedJobs } =
-      useContext(JobsContext);
+   const {
+      category,
+      data,
+      setJobs,
+      jobs,
+      sortedJobs,
+      setSortedJobs,
+      setPageNumber,
+      searchText,
+   } = useContext(JobsContext);
 
    const handleSortJobs = (e) => {
       setSortedJobs(e.target.value);
       console.log(e.target.value);
 
       setJobs(data);
-      // setJobs(jobs.filter((job) => job.salary > 50));
    };
 
-   const sortBy = () => {
-      if (jobType[sortedJobs] === 'Full-Time') {
-         if (category === 0) {
-            setJobs(jobs.filter((item) => item.job_type === 'full_time'));
-         } else if (category !== 0) {
-            console.log('not category 0');
-            setJobs(
-               jobs.filter(
-                  (item) =>
-                     item.job_type === 'full_time' &&
-                     item.category
-                        .toLowerCase()
-                        .includes(category.toLowerCase())
-               )
-            );
-         }
-         // if (category !== 0) {
-         //    console.log(`hello`);
-         //    setJobs(
-         //       jobs.filter(
-         //          (item) =>
-         //             item.job_type === 'full_time' &&
-         //             item.category
-         //                .toLowerCase()
-         //                .includes(category.toLowerCase())
-         //       )
-         //    );
-         // } else setJobs(data);
-      } else if (jobType[sortedJobs] === 'Part-Time') {
-         setJobs(jobs.filter((item) => item.job_type === 'part_time'));
-      } else {
+   const jobTypeFilter = () => {
+      setPageNumber(0);
+      if (!category) {
          setJobs(
-            jobs.filter(
-               (item) =>
-                  item.job_type !== 'full_time' && item.job_type !== 'part_time'
-            )
+            jobs.filter((item) => {
+               switch (jobType[sortedJobs]) {
+                  case 'Full-Time':
+                     return item.job_type.includes('full_time');
+                  case 'Part-Time':
+                     return item.job_type.includes('part_time');
+                  case 'Other':
+                     return (
+                        !item.job_type.includes('part_time') &&
+                        !item.job_type.includes('full_time')
+                     );
+               }
+            })
+         );
+      } else {
+         console.log('there is category');
+         setJobs(
+            jobs.filter((item) => {
+               switch (jobType[sortedJobs]) {
+                  case 'Full-Time':
+                     return (
+                        item.job_type.includes('full_time') &&
+                        item.category
+                           .toLowerCase()
+                           .includes(category.toLowerCase())
+                     );
+                  case 'Part-Time':
+                     return (
+                        item.job_type.includes('part_time') &&
+                        item.category
+                           .toLowerCase()
+                           .includes(category.toLowerCase())
+                     );
+                  case 'Other':
+                     return (
+                        !item.job_type.includes('part_time') &&
+                        !item.job_type.includes('full_time') &&
+                        item.category
+                           .toLowerCase()
+                           .includes(category.toLowerCase())
+                     );
+               }
+            })
          );
       }
    };
@@ -88,7 +105,7 @@ function SortJobs() {
    const classes = useStyles();
 
    useEffect(() => {
-      sortBy();
+      jobTypeFilter();
    }, [sortedJobs]);
 
    return (

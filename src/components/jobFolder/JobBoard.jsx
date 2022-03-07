@@ -2,6 +2,8 @@ import { React, useContext, useState } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { JobsContext } from './JobsContext';
+import { Sort, ArrowCircleDown } from '@mui/icons-material';
+import JobsModal from './JobsModal';
 
 const useStyles = makeStyles((theme) => ({
    position: {
@@ -29,8 +31,10 @@ const useStyles = makeStyles((theme) => ({
    span: {
       background: theme.palette.gray.bg,
       marginRight: '.8rem',
+      // marginBottom: '.5rem',
       padding: '.1rem .8rem',
       borderRadius: '10rem',
+      display: 'inline-block',
    },
 
    nameValue: {
@@ -43,15 +47,14 @@ const useStyles = makeStyles((theme) => ({
       marginRight: '.5rem',
       paddingRight: '.4rem',
    },
+
+   resultIcon: {
+      cursor: 'pointer',
+   },
 }));
 
 function JobBoard() {
-   //    const handleJobDetails = (job) => {
-   //       console.log(job);
-   //       setJobDetails([job]);
-   //       console.log(setJobDetails([job]));
-   //    };
-
+   const [isReversed, setIsReversed] = useState(false);
    const classes = useStyles();
    const {
       jobs,
@@ -60,29 +63,39 @@ function JobBoard() {
       setErrorMessage,
       pagesVisited,
       jobsPerPage,
-      setJobDetails,
+      setJobsModal,
       searchText,
+      jobsModal,
+      handleOpen,
    } = useContext(JobsContext);
    const dot = '. . ';
 
-   // const salaryConvert = () => {
-   //    return jobs.map((item) =>
-   //       item === ' ' ? 'Depends On Experience' : item.salary
-   //    );
-   // };
+   const handleResultIcon = () => {
+      setIsReversed(!isReversed);
+      setJobs(jobs.reverse());
+   };
 
-   // salaryConvert();
+   const handleJobsModal = (job) => {
+      setJobsModal([job]);
+      handleOpen();
+   };
+
    const displayJobs = jobs
       .slice(pagesVisited, pagesVisited + jobsPerPage)
       .map((job) => (
          <>
-            <Box className={classes.hoverEffect} sx={{ mb: 3 }}>
+            <Box
+               className={classes.hoverEffect}
+               sx={{ mb: 3 }}
+               onClick={() => {
+                  handleJobsModal(job);
+               }}
+            >
                <Typography
                   className={classes.position}
                   sx={{ fontWeight: 600 }}
                >
                   {job.title}
-                  {/* {<img src={job.company_logo} />} */}
                </Typography>
                <Typography
                   className={classes.description}
@@ -141,13 +154,17 @@ function JobBoard() {
             <Grid xs={8} sx={{ ml: 4, fontWeight: 500, fontSize: 18 }}>
                Result:&nbsp;{' '}
                <span className={classes.resultIcon}>
-                  {/* <FontAwesomeIcon icon={faSort} onClick={handleResultIcon} /> */}
+                  <ArrowCircleDown onClick={handleResultIcon} />
                </span>
             </Grid>
             <Grid xs={2}>matches</Grid>
          </Grid>
+
          <h1>{errorMessage}</h1>
          {displayJobs}
+         <span>
+            <JobsModal />
+         </span>
       </Box>
    );
 }
