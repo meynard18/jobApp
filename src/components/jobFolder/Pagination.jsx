@@ -35,7 +35,7 @@ function PaginationRounded() {
                   {...item}
                />
             )}
-            sx={{ display: 'flex', justifyContent: 'center' }}
+            sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}
          />
       </Stack>
    );

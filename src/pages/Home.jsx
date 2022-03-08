@@ -88,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
    container2: {
       marginTop: '4rem',
+      backgroundColor: '#F8F8FF',
       // backgroundColor: '#F3F2ED',
       minHeight: '80vh',
    },
@@ -177,64 +178,70 @@ function Home() {
                </Grid>
             </Grid>
          </Container>
-         <Container maxWidth="lg" className={classes.container2}>
-            <Grid container>
-               <Typography
-                  variant="h2"
-                  className={classes.header2}
-                  sx={{ fontWeight: 500, mb: 2, mt: 4 }}
-               >
-                  Explore Popular Jobs
-               </Typography>
-               <Typography
-                  variant="h4"
-                  component="h1"
-                  className={classes.subHeader2}
-                  sx={{ fontWeight: 500, mb: 5 }}
-               >
-                  Get the most exciting jobs around the world and grow your
-                  career fast with others
-               </Typography>
-               <Grid container direction="row" justifyContent="center">
-                  {popularJobs.map((item) => (
-                     <Card
-                        sx={{
-                           minWidth: 220,
-                           m: 1,
-                           mt: 5,
-                        }}
-                     >
-                        <CardActionArea>
-                           <div className={classes.muiIcon}>{item.icon}</div>
-                           <CardContent>
-                              <Typography
-                                 gutterBottom
-                                 variant="h5"
-                                 component="div"
-                                 sx={{
-                                    fontSize: '1.2rem',
-                                    textAlign: 'center',
-                                    mb: 2,
-                                    fontWeight: 500,
-                                 }}
-                              >
-                                 {item.title}
-                              </Typography>
-                              <Typography
-                                 variant="h3"
-                                 align="center"
-                                 color="#9AA2A4"
-                                 sx={{ fontWeight: 500, mb: 1 }}
-                              >
-                                 {item.number}
-                              </Typography>
-                           </CardContent>
-                        </CardActionArea>
-                     </Card>
-                  ))}
+         <Box className={classes.container2}>
+            <Container maxWidth="lg">
+               <Grid container>
+                  <Typography
+                     variant="h2"
+                     className={classes.header2}
+                     sx={{ fontWeight: 600, mb: 2, mt: 4 }}
+                  >
+                     Explore Popular Jobs
+                  </Typography>
+                  <Typography
+                     variant="h4"
+                     component="h1"
+                     className={classes.subHeader2}
+                     sx={{ fontWeight: 500, mb: 3, lineHeight: 1.5 }}
+                  >
+                     Get the most exciting jobs around the world and grow your
+                     career fast with others
+                  </Typography>
+                  <Grid container direction="row" justifyContent="center">
+                     {popularJobs.map((item) => (
+                        <Link to={'/jobs'} className={classes.link}>
+                           <Card
+                              sx={{
+                                 minWidth: 220,
+                                 m: 1.5,
+                                 mt: 5,
+                              }}
+                           >
+                              <CardActionArea>
+                                 <div className={classes.muiIcon}>
+                                    {item.icon}
+                                 </div>
+                                 <CardContent>
+                                    <Typography
+                                       gutterBottom
+                                       variant="h5"
+                                       component="div"
+                                       sx={{
+                                          fontSize: '1.2rem',
+                                          textAlign: 'center',
+                                          mb: 2,
+                                          fontWeight: 500,
+                                       }}
+                                    >
+                                       {item.title}
+                                    </Typography>
+                                    <Typography
+                                       variant="h3"
+                                       align="center"
+                                       color="#9AA2A4"
+                                       sx={{ fontWeight: 500, mb: 1 }}
+                                    >
+                                       {item.number}
+                                    </Typography>
+                                 </CardContent>
+                              </CardActionArea>
+                           </Card>
+                        </Link>
+                     ))}
+                  </Grid>
                </Grid>
-            </Grid>
-         </Container>
+            </Container>
+         </Box>
       </Box>
    );
 }

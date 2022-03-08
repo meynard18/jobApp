@@ -19,11 +19,11 @@ export const theme = createTheme({
          third: '#2D5DA1',
          fourth: '#3457D5',
          fifth: ' #4B9CD3',
-         sixth: '#00CCFF'
+         sixth: '#00CCFF',
       },
       btnColor: {
          main: '#00CCFF',
-         contrastText: 'white'
+         contrastText: 'white',
       },
       gray: {
          bg: '#eeeeee',

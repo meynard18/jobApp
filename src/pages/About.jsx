@@ -8,6 +8,7 @@ import CardComponent from '../components/CardComponent';
 const useStyles = makeStyles((theme) => ({
    container: {
       minHeight: '100vh',
+      marginBottom: '2rem',
    },
 
    heading: {
@@ -17,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('lg')]: {
          textAlign: 'center',
          fontSize: '3rem',
-      
       },
    },
    heading2: {
@@ -25,9 +25,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '4rem',
       [theme.breakpoints.down('lg')]: {
          fontSize: '3rem',
-      
       },
-
    },
    aboutText: {
       color: theme.palette.gray.fW600,
@@ -37,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
          margin: 'auto',
          textAlign: 'center',
          width: '100%',
-      
       },
    },
 
@@ -52,7 +49,7 @@ function About() {
    const classes = useStyles();
    return (
       <Container maxWidth="xl" className={classes.container}>
-         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+         <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
             <Grid item xs={12} md={6}>
                <Box sx={{ mt: 7 }}>
                   <Typography
@@ -63,7 +60,7 @@ function About() {
                   >
                      Who We Are
                   </Typography>
-                  <Typography className={classes.aboutText} variant='body1'>
+                  <Typography className={classes.aboutText} variant="body1">
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Eum sapiente odit nisi quibusdam magni consequuntur
                      voluptates nemo molestias quod ipsa cupiditate debitis
@@ -88,13 +85,17 @@ function About() {
                />
             </Grid>
             <Grid xs={12} align="center" sx={{ mt: 3 }}>
-               <Typography variant="h2" component="h1" className={classes.heading2} sx={{fontWeight: 500, mt: 8}}>
+               <Typography
+                  variant="h2"
+                  component="h1"
+                  className={classes.heading2}
+                  sx={{ fontWeight: 500, mt: 8 }}
+               >
                   Meet Our Team
                </Typography>
             </Grid>
          </Grid>
-         <CardComponent/>
-
+         <CardComponent />
       </Container>
    );
 }

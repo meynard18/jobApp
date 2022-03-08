@@ -2,7 +2,7 @@ import { React, useContext, useState } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { JobsContext } from './JobsContext';
-import { Sort, ArrowCircleDown } from '@mui/icons-material';
+import { ArrowCircleDown } from '@mui/icons-material';
 import JobsModal from './JobsModal';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,8 +48,15 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: '.4rem',
    },
 
+   result: {
+      display: 'flex',
+      alignItems: 'center',
+   },
+
    resultIcon: {
+      fontSize: '1.5rem',
       cursor: 'pointer',
+      color: theme.palette.gray.fW400,
    },
 }));
 
@@ -67,6 +74,7 @@ function JobBoard() {
       searchText,
       jobsModal,
       handleOpen,
+      isLoading,
    } = useContext(JobsContext);
    const dot = '. . ';
 
@@ -152,15 +160,24 @@ function JobBoard() {
       <Box sx={{ mt: 1, ml: 2 }}>
          <Grid container sx={{ mt: 3 }} className={classes.resultContainer}>
             <Grid xs={8} sx={{ ml: 4, fontWeight: 500, fontSize: 18 }}>
-               Result:&nbsp;{' '}
-               <span className={classes.resultIcon}>
-                  <ArrowCircleDown onClick={handleResultIcon} />
+               <span className={classes.result}>
+                  {' '}
+                  Result:&nbsp;
+                  <ArrowCircleDown
+                     onClick={handleResultIcon}
+                     className={classes.resultIcon}
+                     sx={{
+                        transform: isReversed
+                           ? 'rotate(180deg)'
+                           : 'rotate(0deg)',
+                        transition: '.2s',
+                     }}
+                  />
                </span>
             </Grid>
             <Grid xs={2}>matches</Grid>
          </Grid>
 
-         <h1>{errorMessage}</h1>
          {displayJobs}
          <span>
             <JobsModal />

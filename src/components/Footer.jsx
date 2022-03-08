@@ -11,7 +11,6 @@ import logo2 from '../images/logo2.png';
 const useStyles = makeStyles((theme) => ({
    container: {
       backgroundColor: theme.palette.secondary.main,
-      marginTop: '2rem',
       padding: '.7rem 0',
       position: 'relative',
       bottom: '0',
@@ -30,22 +29,22 @@ const useStyles = makeStyles((theme) => ({
    },
 
    copyright: {
-     display: 'flex',
-     justifyContent:'center',
-     color: theme.palette.primaryBG.main,
-     fontSize: '1rem',
+      display: 'flex',
+      justifyContent: 'center',
+      color: theme.palette.primaryBG.main,
+      fontSize: '1rem',
    },
 
    span: {
-     fontSize: '1rem',
-     padding: '0 1rem',
+      fontSize: '1rem',
+      padding: '0 1rem',
    },
    span2: {
-     padding: '.2rem .5rem',
-     border: '2px solid white',
-     borderRadius: 5,
-     marginLeft: '.2rem',
-   }
+      padding: '.2rem .5rem',
+      border: '2px solid white',
+      borderRadius: 5,
+      marginLeft: '.2rem',
+   },
 }));
 
 function Footer() {
@@ -60,10 +59,10 @@ function Footer() {
                   <TwitterIcon className={classes.icon} />
                </Box>
                <Box className={classes.copyright}>
-                  <Typography >
-                    Copyrights &copy; 2022
-                  </Typography>
-                  <span className={classes.span}>JOB<span className={classes.span2}>HUNT</span></span>
+                  <Typography>Copyrights &copy; 2022</Typography>
+                  <span className={classes.span}>
+                     JOB<span className={classes.span2}>HUNT</span>
+                  </span>
                </Box>
             </Grid>
          </Grid>
