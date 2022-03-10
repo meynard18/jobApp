@@ -89,7 +89,6 @@ const useStyles = makeStyles((theme) => ({
    container2: {
       marginTop: '4rem',
       backgroundColor: '#F8F8FF',
-      // backgroundColor: '#F3F2ED',
       minHeight: '80vh',
    },
    header2: {
