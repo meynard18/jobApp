@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
    },
    navbar: {
       width: '89%',
-      margin:'auto',
+      margin: 'auto',
       borderBottom: '1px solid #cecece',
       justifyContent: 'space-between',
       [theme.breakpoints.down('xl')]: {
@@ -23,9 +23,11 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    navLink: {
-      marginLeft: '34rem',
       [theme.breakpoints.down('xl')]: {
          marginLeft: '25rem',
+      },
+      [theme.breakpoints.down('lg')]: {
+         marginLeft: '18rem',
       },
    },
 
@@ -35,8 +37,9 @@ const useStyles = makeStyles((theme) => ({
    },
 
    link: {
+      fontSize: 15,
       flexWrap: 'none',
-      fontWeight: '500',
+      fontWeight: 600,
       color: theme.palette.gray.fW600,
       textDecoration: 'none',
       padding: '0 1rem',

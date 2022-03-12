@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
       overflowY: 'scroll',
       overflowX: 'hidden',
       outline: 'none',
+      [theme.breakpoints.down('xl')]: {
+         width: '90%',
+      },
    },
 
    detailsContainer: {
@@ -75,7 +78,7 @@ export default function BasicModal() {
                         id="modal-modal-title"
                         variant="h6"
                         component="h2"
-                        sx={{ mt: 2, fontWeight: 600 }}
+                        sx={{ mt: 2, fontWeight: 600, fontSize: 30 }}
                         className={classes.jobTitle}
                      >
                         {item.title}

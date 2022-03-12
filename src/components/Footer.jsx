@@ -39,12 +39,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1rem',
       padding: '0 1rem',
    },
-   span2: {
-      padding: '.2rem .5rem',
-      border: '2px solid white',
-      borderRadius: 5,
-      marginLeft: '.2rem',
-   },
 }));
 
 function Footer() {
@@ -60,9 +54,7 @@ function Footer() {
                </Box>
                <Box className={classes.copyright}>
                   <Typography>Copyrights &copy; 2022</Typography>
-                  <span className={classes.span}>
-                     JOB<span className={classes.span2}>HUNT</span>
-                  </span>
+                  <span className={classes.span}>JOBHUNT</span>
                </Box>
             </Grid>
          </Grid>

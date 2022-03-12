@@ -44,8 +44,34 @@ export const theme = createTheme({
       },
    },
    typography: {
+      // fontSize: 10,
       fontFamily: ['Montserrat', 'sans-serif'].join(','),
-      fontSize: '1rem',
+      h1: {
+         fontSize: 66,
+         '@media (max-width:480px)': {
+            fontSize: 56,
+         },
+         '@media (max-width:360px)': {
+            fontSize: 46,
+         },
+      },
+      h2: {
+         fontSize: 58,
+         '@media (max-width:480px)': {
+            fontSize: 48,
+         },
+         '@media (max-width:360px)': {
+            fontSize: 42,
+         },
+      },
+
+      h4: {
+         fontSize: 16,
+         '@media (max-width:480px)': {
+            fontSize: 28,
+         },
+      },
+      body1: { fontSize: 14 },
 
       button: {
          textTransform: 'none',

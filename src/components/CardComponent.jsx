@@ -23,14 +23,12 @@ const cardContents = [
    },
 ];
 
-
-
 function CardComponent() {
    return (
-      <Container sx={{mt: 3}}>
-         <Grid container direction="row" justifyContent="center" >
+      <Container sx={{ mt: 3 }}>
+         <Grid container direction="row" justifyContent="center">
             {cardContents.map((item) => (
-               <Card sx={{ maxWidth: 345, m: 3}}>
+               <Card sx={{ maxWidth: 345, m: 3 }}>
                   <CardActionArea>
                      <CardMedia
                         component="img"
@@ -44,8 +42,14 @@ function CardComponent() {
                            variant="h5"
                            component="div"
                         ></Typography>
-                        <Typography variant="h3" align='center' color= 'theme.palette.gray.fW600' sx={{fontWeight: 600}}>
-                            {item.cardTitle}
+                        <Typography
+                           variant="body1"
+                           component="h3"
+                           align="center"
+                           color="theme.palette.gray.fW600"
+                           sx={{ fontWeight: 600 }}
+                        >
+                           {item.cardTitle}
                         </Typography>
                      </CardContent>
                   </CardActionArea>

@@ -25,13 +25,12 @@ const useStyles = makeStyles((theme) => ({
    },
 
    description: {
-      fontSize: '.9rem',
       color: theme.palette.gray.fW400,
    },
    span: {
       background: theme.palette.gray.bg,
       marginRight: '.8rem',
-      // marginBottom: '.5rem',
+      color: theme.palette.gray.fW500,
       padding: '.1rem .8rem',
       borderRadius: '10rem',
       display: 'inline-block',
@@ -101,11 +100,12 @@ function JobBoard() {
             >
                <Typography
                   className={classes.position}
-                  sx={{ fontWeight: 600 }}
+                  sx={{ fontWeight: 600, fontSize: 18 }}
                >
                   {job.title}
                </Typography>
                <Typography
+                  variant="body1"
                   className={classes.description}
                   sx={{ fontWeight: 400, mt: 2, mb: 3 }}
                >
@@ -113,7 +113,7 @@ function JobBoard() {
                      .replace(/(<([^>]+)>)/gi, '')
                      .slice(0, 220)}${dot.repeat(2)}`}
                </Typography>
-               <Typography>
+               <Typography sx={{ fontWeight: 500 }}>
                   {job.tags.map((languages, i) =>
                      i < 6 ? (
                         <span className={classes.span} key={i}>

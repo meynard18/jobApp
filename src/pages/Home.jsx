@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Typography, Button, Box, Grid } from '@mui/material';
+import { Container, Typography, Button, Box, Grid, Paper } from '@mui/material';
 import heroSection from '../images/heroSection.jpg';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
@@ -17,63 +17,54 @@ import { CardActionArea } from '@mui/material';
 const useStyles = makeStyles((theme) => ({
    container: {
       backgroundImage: `url(${heroSection})`,
+      width: '100%',
       margin: 'auto',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      minHeight: '120vh',
-
-      [theme.breakpoints.down('lg')]: {
-         height: '70vh',
-      },
-      [theme.breakpoints.down('md')]: {
-         height: '90vh',
-      },
+      height: 'auto',
    },
 
    gridBox: {
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down('xl')]: {
          display: 'flex',
          justifyContent: 'center',
       },
    },
 
    overlay: {
-      marginTop: '16rem',
-      marginLeft: '4rem',
-      background: 'rgb(255,255,255, 0.85)',
+      display: 'inline-block',
+      marginTop: '22%',
+      marginLeft: '8%',
+      paddingLeft: '2rem',
+      marginBottom: '10rem',
+      background: 'rgb(255,255,255, .85)',
       borderRadius: 10,
+      outline: '1px solid #FAFAFA',
       height: 'auto',
       width: '32rem',
-      [theme.breakpoints.down('lg')]: {
-         margin: '8rem auto',
+      [theme.breakpoints.down('xl')]: {
+         marginLeft: 0,
          textAlign: 'center',
+         paddingLeft: 0,
+         paddingTop: '1rem',
       },
-      [theme.breakpoints.down('sm')]: {
-         width: '18rem',
+      [theme.breakpoints.down('md')]: {
+         width: '60%',
+         padding: '1rem',
       },
    },
 
    subHeader: {
       color: theme.palette.gray.fW500,
       paddingTop: '.7rem',
-      fontSize: 32,
       [theme.breakpoints.down('md')]: {
          fontSize: 28,
       },
    },
    header: {
       color: theme.palette.third.main,
-      fontSize: 66,
       paddingBottom: '1.5rem',
-      [theme.breakpoints.down('md')]: {
-         fontSize: 56,
-         paddingBottom: '1rem',
-      },
-      [theme.breakpoints.down('sm')]: {
-         fontSize: 52,
-         paddingBottom: '1rem',
-      },
    },
 
    link: {
@@ -87,46 +78,85 @@ const useStyles = makeStyles((theme) => ({
    },
 
    container2: {
-      marginTop: '4rem',
+      width: '100%',
+      margin: '4rem auto auto',
       backgroundColor: '#F8F8FF',
-      minHeight: '80vh',
+      height: 'auto',
+      boxSizing: 'border-box',
+      [theme.breakpoints.down('xl')]: {
+         display: 'flex',
+         justifyContent: 'center',
+         margin: '3rem auto auto',
+      },
+   },
+   subContainer2: {
+      [theme.breakpoints.down('xl')]: {
+         display: 'flex',
+         justifyContent: 'center',
+      },
+   },
+
+   header2Box: {
+      paddingLeft: '7rem',
+      display: 'inline-block',
+      marginTop: '2rem',
+      marginBottom: '4rem',
+      [theme.breakpoints.down('xl')]: {
+         textAlign: 'center',
+         paddingLeft: 0,
+      },
    },
    header2: {
-      fontSize: '3rem',
+      display: 'inline-block',
       color: '#181818',
+      [theme.breakpoints.down('xl')]: {
+         textAlign: 'center',
+      },
    },
    subHeader2: {
+      display: 'inline-block',
       fontSize: '1.2rem',
-      maxWidth: 500,
+      maxWidth: 600,
       color: '#424242',
+      [theme.breakpoints.down('xl')]: {
+         textAlign: 'center',
+         width: '100%',
+      },
+   },
+
+   cards: {
+      backgroundColor: 'black',
+      // width: '100%',
+   },
+
+   iconBox: {
+      marginBottom: '4rem',
    },
 
    muiIcon: {
-      fontSize: 60,
       color: theme.palette.third.fifth,
       textAlign: 'center',
-      marginTop: '2rem',
    },
 }));
 
 const popularJobs = [
    {
-      icon: <DesktopWindowsIcon />,
+      icon: <DesktopWindowsIcon sx={{ fontSize: 50, mt: 3 }} />,
       title: 'Digital Marketing',
       number: '32 Jobs',
    },
    {
-      icon: <BorderColorIcon />,
+      icon: <BorderColorIcon sx={{ fontSize: 50, mt: 3 }} />,
       title: 'Content Writing',
       number: '14 Jobs',
    },
    {
-      icon: <PeopleAltIcon />,
+      icon: <PeopleAltIcon sx={{ fontSize: 50, mt: 3 }} />,
       title: 'HR Management',
       number: '27 Jobs',
    },
    {
-      icon: <CodeIcon />,
+      icon: <CodeIcon sx={{ fontSize: 50, mt: 3 }} />,
       title: 'Development',
       number: '35 Jobs',
    },
@@ -135,111 +165,116 @@ const popularJobs = [
 function Home() {
    const classes = useStyles();
    return (
-      <Box>
-         <Container maxWidth="xl" className={classes.container}>
-            <Grid container>
+      <Box sx={{ minHeight: '100vh' }}>
+         <Box sx={{ height: '100%' }}>
+            <Grid maxWidth="xl" container className={classes.container}>
                <Grid xs={12} className={classes.gridBox}>
                   <Box className={classes.overlay}>
-                     <Box sx={{ p: 2 }}>
-                        <Typography
-                           className={classes.subHeader}
-                           variant="h4"
-                           component="h4"
-                           sx={{ fontWeight: 700, ml: 2 }}
+                     <Typography
+                        className={classes.subHeader}
+                        variant="h4"
+                        component="h4"
+                        gutterBottom="false"
+                        sx={{ fontWeight: 700, fontSize: 32 }}
+                     >
+                        Looking for a new career?
+                     </Typography>
+                     <Typography
+                        variant="h1"
+                        component="h1"
+                        sx={{ fontWeight: 700 }}
+                        className={classes.header}
+                     >
+                        IT STARTS HERE
+                     </Typography>
+                     <Link to={'/jobs'} className={classes.link}>
+                        <Button
+                           variant="contained"
+                           color="btnColor"
+                           sx={{
+                              fontWeight: 'bold',
+                              fontSize: 18,
+                              mb: 4,
+                           }}
+                           className={classes.btnJob}
                         >
-                           Looking for a new career?
-                        </Typography>
-                        <Typography
-                           variant="h1"
-                           component="h1"
-                           sx={{ fontWeight: 700, ml: 2, mb: -1.5 }}
-                           className={classes.header}
-                        >
-                           IT STARTS HERE
-                        </Typography>
-                        <Link to={'/jobs'} className={classes.link}>
-                           <Button
-                              variant="contained"
-                              color="btnColor"
-                              sx={{
-                                 fontWeight: 'bold',
-                                 fontSize: 18,
-                                 mb: 2,
-                                 ml: 2,
-                              }}
-                              className={classes.btnJob}
-                           >
-                              Find Jobs
-                           </Button>
-                        </Link>
-                     </Box>
+                           Find Jobs
+                        </Button>
+                     </Link>
                   </Box>
                </Grid>
             </Grid>
-         </Container>
-         <Box className={classes.container2}>
-            <Container maxWidth="lg">
-               <Grid container>
+         </Box>
+         {/* <Grid maxWidth="xl" container className={classes.subContainer2}> */}
+         <Box sx={{ height: '100%' }}>
+            <Grid maxWidth="xl" container className={classes.container2}>
+               <Box className={classes.header2Box}>
                   <Typography
                      variant="h2"
+                     component="h2"
+                     gutterBottom="true"
                      className={classes.header2}
-                     sx={{ fontWeight: 600, mb: 2, mt: 4 }}
+                     sx={{ fontWeight: 600 }}
                   >
                      Explore Popular Jobs
                   </Typography>
                   <Typography
-                     variant="h4"
-                     component="h1"
+                     variant="subtle1"
+                     component="subtle1"
                      className={classes.subHeader2}
-                     sx={{ fontWeight: 500, mb: 3, lineHeight: 1.5 }}
+                     sx={{ fontWeight: 500 }}
                   >
                      Get the most exciting jobs around the world and grow your
                      career fast with others
                   </Typography>
-                  <Grid container direction="row" justifyContent="center">
-                     {popularJobs.map((item) => (
-                        <Link to={'/jobs'} className={classes.link}>
-                           <Card
-                              sx={{
-                                 minWidth: 220,
-                                 m: 1.5,
-                                 mt: 5,
-                              }}
-                           >
-                              <CardActionArea>
-                                 <div className={classes.muiIcon}>
-                                    {item.icon}
-                                 </div>
-                                 <CardContent>
-                                    <Typography
-                                       gutterBottom
-                                       variant="h5"
-                                       component="div"
-                                       sx={{
-                                          fontSize: '1.2rem',
-                                          textAlign: 'center',
-                                          mb: 2,
-                                          fontWeight: 500,
-                                       }}
-                                    >
-                                       {item.title}
-                                    </Typography>
-                                    <Typography
-                                       variant="h3"
-                                       align="center"
-                                       color="#9AA2A4"
-                                       sx={{ fontWeight: 500, mb: 1 }}
-                                    >
-                                       {item.number}
-                                    </Typography>
-                                 </CardContent>
-                              </CardActionArea>
-                           </Card>
-                        </Link>
-                     ))}
-                  </Grid>
+               </Box>
+               <Grid
+                  container
+                  direction="row"
+                  justifyContent="center"
+                  className={classes.iconBox}
+               >
+                  {popularJobs.map((item) => (
+                     <Link to={'/jobs'} className={classes.link}>
+                        <Card
+                           sx={{
+                              minWidth: 220,
+                              m: 1.5,
+                           }}
+                        >
+                           <CardActionArea className={classes.cards}>
+                              <Typography className={classes.muiIcon}>
+                                 {item.icon}
+                              </Typography>
+                              <CardContent>
+                                 <Typography
+                                    gutterBottom
+                                    variant="h4"
+                                    component="div"
+                                    sx={{
+                                       fontSize: '1.2rem',
+                                       textAlign: 'center',
+                                       mb: 2,
+                                       fontWeight: 500,
+                                    }}
+                                 >
+                                    {item.title}
+                                 </Typography>
+                                 <Typography
+                                    variant="body1"
+                                    align="center"
+                                    color="#9AA2A4"
+                                    sx={{ fontWeight: 500, mb: 1 }}
+                                 >
+                                    {item.number}
+                                 </Typography>
+                              </CardContent>
+                           </CardActionArea>
+                        </Card>
+                     </Link>
+                  ))}
                </Grid>
-            </Container>
+            </Grid>
          </Box>
       </Box>
    );

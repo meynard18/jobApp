@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       justifyContent: 'center',
       minHeight: '100vh',
+      [theme.breakpoints.down('sm')]: {
+         padding: '1rem',
+      },
    },
 
    header: {
@@ -27,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
       },
    },
 
-   inputs: {
-      [theme.breakpoints.down('md')]: {
-         backgroundColor: 'blue',
+   input: {
+      [theme.breakpoints.down('lg')]: {
+         width: '100%',
       },
    },
 }));
@@ -113,10 +116,13 @@ const Contact = () => {
             >
                Contact Us
             </Typography>
-            <FormControl sx={{ mb: 5 }} onSubmit={saveInputValues}>
+            <FormControl
+               sx={{ mb: 5 }}
+               onSubmit={saveInputValues}
+               className={classes.input}
+            >
                <div className={classes.spanTextField}>
                   <TextField
-                     className={classes.firstName}
                      style={{ width: '100%' }}
                      id="outlined-basic"
                      label="First Name"
@@ -160,7 +166,7 @@ const Contact = () => {
                   rows={8}
                   label="Write Your Message"
                   margin="normal"
-                  sx={{ mb: 2 }}
+                  sx={{ mb: 3 }}
                   size="small"
                   name="message"
                   onChange={handleInput}

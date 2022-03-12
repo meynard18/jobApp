@@ -9,11 +9,15 @@ const useStyles = makeStyles((theme) => ({
    container: {
       minHeight: '100vh',
       marginBottom: '2rem',
+      [theme.breakpoints.down('xxl')]: {
+         '@media (orientation: landscape)': {
+            minHeight: '100vh',
+         },
+      },
    },
 
    heading: {
       color: theme.palette.gray.fW500,
-      fontSize: '4rem',
       paddingBottom: '1rem',
       [theme.breakpoints.down('lg')]: {
          textAlign: 'center',
@@ -43,6 +47,12 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       objectFit: 'contain',
    },
+
+   imageContainer: {
+      // backgroundColor: 'lightblue',
+      display: 'inline-block',
+      alignSelf: 'center',
+   },
 }));
 
 function About() {
@@ -50,17 +60,21 @@ function About() {
    return (
       <Container maxWidth="xl" className={classes.container}>
          <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} lg={5} xl={6} md={6}>
                <Box sx={{ mt: 7 }}>
                   <Typography
-                     variant="h1"
                      component="h1"
-                     sx={{ fontWeight: 500 }}
+                     variant="h1"
+                     sx={{ fontWeight: 500, fontSize: 60 }}
                      className={classes.heading}
                   >
                      Who We Are
                   </Typography>
-                  <Typography className={classes.aboutText} variant="body1">
+                  <Typography
+                     className={classes.aboutText}
+                     variant="h4"
+                     component="h6"
+                  >
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Eum sapiente odit nisi quibusdam magni consequuntur
                      voluptates nemo molestias quod ipsa cupiditate debitis
@@ -77,7 +91,14 @@ function About() {
                </Box>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid
+               item
+               xs={12}
+               xl={6}
+               lg={7}
+               md={6}
+               className={classes.imageContainer}
+            >
                <img
                   src={employee}
                   alt="Employees at work talking"
@@ -86,8 +107,8 @@ function About() {
             </Grid>
             <Grid xs={12} align="center" sx={{ mt: 3 }}>
                <Typography
-                  variant="h2"
-                  component="h1"
+                  variant="h3"
+                  component="h2"
                   className={classes.heading2}
                   sx={{ fontWeight: 500, mt: 8 }}
                >
