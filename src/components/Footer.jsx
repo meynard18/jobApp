@@ -1,12 +1,9 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { palette } from '@mui/system';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import CopyrightIcon from '@mui/icons-material/Copyright';
-import logo2 from '../images/logo2.png';
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -46,7 +43,7 @@ function Footer() {
    return (
       <Box className={classes.container}>
          <Grid>
-            <Grid xs={12}>
+            <Grid item xs={12}>
                <Box className={classes.box}>
                   <FacebookIcon className={classes.icon} />
                   <LinkedInIcon className={classes.icon} />

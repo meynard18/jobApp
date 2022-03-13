@@ -1,13 +1,12 @@
 import React from 'react';
-import team from '../images/team.jpeg';
-import team2 from '../images/team2.png';
-import team3 from '../images/team3.png';
+import team from '../images/team.jpg';
+import team2 from '../images/team2.jpg';
+import team3 from '../images/team3.jpg';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, Container } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 const cardContents = [
    {
       cardImg: team3,
@@ -27,8 +26,8 @@ function CardComponent() {
    return (
       <Container sx={{ mt: 3 }}>
          <Grid container direction="row" justifyContent="center">
-            {cardContents.map((item) => (
-               <Card sx={{ maxWidth: 345, m: 3 }}>
+            {cardContents.map((item, idx) => (
+               <Card sx={{ maxWidth: 345, m: 3 }} key={idx}>
                   <CardActionArea>
                      <CardMedia
                         component="img"

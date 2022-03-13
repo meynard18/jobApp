@@ -1,9 +1,10 @@
-import { React, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { JobsContext } from './JobsContext';
 import { ArrowCircleDown } from '@mui/icons-material';
 import JobsModal from './JobsModal';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const useStyles = makeStyles((theme) => ({
    position: {
@@ -11,9 +12,15 @@ const useStyles = makeStyles((theme) => ({
    },
 
    resultContainer: {
-      paddingBottom: '1rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      paddingLeft: '1.5rem',
+      paddingRight: '1.5rem',
+      paddingBottom: '.5rem',
+      marginTop: '2rem',
+      marginBottom: '2rem',
       borderBottom: '1px solid #cecece',
-      margin: 'auto',
+      color: theme.palette.gray.fW500,
    },
 
    hoverEffect: {
@@ -25,15 +32,16 @@ const useStyles = makeStyles((theme) => ({
    },
 
    description: {
-      color: theme.palette.gray.fW400,
+      color: theme.palette.gray.fW500,
    },
-   span: {
+   spanLanguages: {
       background: theme.palette.gray.bg,
       marginRight: '.8rem',
       color: theme.palette.gray.fW500,
       padding: '.1rem .8rem',
       borderRadius: '10rem',
       display: 'inline-block',
+      marginTop: '.5rem',
    },
 
    nameValue: {
@@ -45,11 +53,6 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.third.fifth,
       marginRight: '.5rem',
       paddingRight: '.4rem',
-   },
-
-   result: {
-      display: 'flex',
-      alignItems: 'center',
    },
 
    resultIcon: {
@@ -65,15 +68,12 @@ function JobBoard() {
    const {
       jobs,
       setJobs,
-      errorMessage,
-      setErrorMessage,
       pagesVisited,
       jobsPerPage,
       setJobsModal,
-      searchText,
-      jobsModal,
+      handleKeyDown,
+
       handleOpen,
-      isLoading,
    } = useContext(JobsContext);
    const dot = '. . ';
 
@@ -90,7 +90,7 @@ function JobBoard() {
    const displayJobs = jobs
       .slice(pagesVisited, pagesVisited + jobsPerPage)
       .map((job) => (
-         <>
+         <React.Fragment key={job.id}>
             <Box
                className={classes.hoverEffect}
                sx={{ mb: 3 }}
@@ -107,7 +107,7 @@ function JobBoard() {
                <Typography
                   variant="body1"
                   className={classes.description}
-                  sx={{ fontWeight: 400, mt: 2, mb: 3 }}
+                  sx={{ mt: 2, mb: 3, fontSize: 16 }}
                >
                   {`${job.description
                      .replace(/(<([^>]+)>)/gi, '')
@@ -116,7 +116,7 @@ function JobBoard() {
                <Typography sx={{ fontWeight: 500 }}>
                   {job.tags.map((languages, i) =>
                      i < 6 ? (
-                        <span className={classes.span} key={i}>
+                        <span className={classes.spanLanguages} key={i}>
                            {languages}
                         </span>
                      ) : (
@@ -153,32 +153,55 @@ function JobBoard() {
                   </span>
                </Typography>
             </Box>
-         </>
+         </React.Fragment>
       ));
 
    return (
       <Box sx={{ mt: 1, ml: 2 }}>
-         <Grid container sx={{ mt: 3 }} className={classes.resultContainer}>
-            <Grid xs={8} sx={{ ml: 4, fontWeight: 500, fontSize: 18 }}>
-               <span className={classes.result}>
-                  {' '}
-                  Result:&nbsp;
-                  <ArrowCircleDown
-                     onClick={handleResultIcon}
-                     className={classes.resultIcon}
-                     sx={{
-                        transform: isReversed
-                           ? 'rotate(180deg)'
-                           : 'rotate(0deg)',
-                        transition: '.2s',
-                     }}
-                  />
-               </span>
-            </Grid>
-            <Grid xs={2}>matches</Grid>
-         </Grid>
+         <Box container className={classes.resultContainer}>
+            <Typography
+               sx={{
+                  fontSize: 16,
+                  display: 'flex',
+                  fontWeight: 500,
+               }}
+            >
+               {' '}
+               Result:&nbsp;
+               <ArrowCircleDown
+                  onClick={handleResultIcon}
+                  className={classes.resultIcon}
+                  sx={{
+                     transform: isReversed ? 'rotate(180deg)' : 'rotate(0deg)',
+                     transition: '.2s',
+                  }}
+               />
+            </Typography>
+            <Typography>{`${
+               jobs.length <= 1
+                  ? `${jobs.length}` + ' match'
+                  : `${jobs.length}` + ' matches'
+            }`}</Typography>
+         </Box>
 
-         {displayJobs}
+         {jobs.length >= 1 ? (
+            displayJobs
+         ) : (
+            <Typography
+               variant="h3"
+               component="h5"
+               sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  mt: 6,
+                  fontSize: 28,
+               }}
+            >
+               <ErrorOutlineIcon sx={{ fontSize: 32, mr: 2, mb: 2 }} /> Job
+               listing not Found
+            </Typography>
+         )}
+         {/* {displayJobs} */}
          <span>
             <JobsModal />
          </span>

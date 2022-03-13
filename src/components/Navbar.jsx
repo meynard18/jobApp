@@ -63,7 +63,11 @@ function Navbar() {
          <CssBaseline />
          <Toolbar className={classes.navbar}>
             <Link to="/jobApp" className={classes.logo}>
-               <img src={logo} alt="Company Logo" />
+               <img
+                  src={logo}
+                  alt="Company Logo"
+                  sx={{ width: 'auto', height: 'auto' }}
+               />
             </Link>
             {isMobile ? (
                <DrawerComponent />

@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { makeStyles } from '@mui/styles';
-import { Grid } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
    modalStyle: {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import {
    Box,
    FormControl,
@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import SortRoundedIcon from '@mui/icons-material/SortRounded';
-import { useContext } from 'react';
 import { JobsContext } from './JobsContext';
 
 const useStyles = makeStyles((theme) => ({
@@ -41,13 +40,10 @@ function SortJobs() {
       sortedJobs,
       setSortedJobs,
       setPageNumber,
-      searchText,
    } = useContext(JobsContext);
 
    const handleSortJobs = (e) => {
       setSortedJobs(e.target.value);
-      console.log(e.target.value);
-
       setJobs(data);
    };
 
@@ -133,7 +129,7 @@ function SortJobs() {
             >
                {jobType.map((item, index) => (
                   <FormControlLabel
-                     control={<Radio />}
+                     control={<Radio size="small" />}
                      label={item}
                      value={index}
                      key={item + index}

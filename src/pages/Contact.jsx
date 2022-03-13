@@ -163,7 +163,7 @@ const Contact = () => {
                <TextField
                   id="outlined-multiline-static"
                   multiline
-                  rows={8}
+                  rows={10}
                   label="Write Your Message"
                   margin="normal"
                   sx={{ mb: 3 }}

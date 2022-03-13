@@ -35,8 +35,9 @@ function JobPosts() {
             <Grid item lg={2.5} md={4} sm={12}>
                <SortJobs />
             </Grid>
-
             {errorMessage.length > 0 ? (
+               /////// HANDLING ERRORS AND DATA LOADING STATUS ////////////////
+
                <Typography
                   sx={{ fontSize: 50, fontWeight: 500, margin: 'auto' }}
                >

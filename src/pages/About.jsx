@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Typography, Button, Box, Grid } from '@mui/material';
-import employee from '../images/about.jpeg';
+import { Container, Typography, Box, Grid } from '@mui/material';
+import employee from '../images/aboutIMG.jpg';
 
 import { makeStyles } from '@mui/styles';
 import CardComponent from '../components/CardComponent';
@@ -16,12 +16,19 @@ const useStyles = makeStyles((theme) => ({
       },
    },
 
-   heading: {
+   header: {
       color: theme.palette.gray.fW500,
       paddingBottom: '1rem',
       [theme.breakpoints.down('lg')]: {
          textAlign: 'center',
          fontSize: '3rem',
+      },
+   },
+
+   subHeader: {
+      color: theme.palette.gray.fW500,
+      [theme.breakpoints.down('lg')]: {
+         textAlign: 'center',
       },
    },
    heading2: {
@@ -32,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    aboutText: {
-      color: theme.palette.gray.fW600,
+      color: theme.palette.gray.fW500,
       width: '90%',
       margin: 'auto',
       [theme.breakpoints.down('lg')]: {
@@ -49,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
    },
 
    imageContainer: {
-      // backgroundColor: 'lightblue',
       display: 'inline-block',
       alignSelf: 'center',
    },
@@ -66,27 +72,31 @@ function About() {
                      component="h1"
                      variant="h1"
                      sx={{ fontWeight: 500, fontSize: 60 }}
-                     className={classes.heading}
+                     className={classes.header}
                   >
-                     Who We Are
+                     About Us
+                  </Typography>
+                  <Typography
+                     className={classes.subHeader}
+                     component="h2"
+                     variant="h4"
+                     sx={{ fontSize: 22, mb: 2, fontWeight: 500 }}
+                  >
+                     Our vision is to connect businesses with talent and improve
+                     lives through better careers.
                   </Typography>
                   <Typography
                      className={classes.aboutText}
-                     variant="h4"
-                     component="h6"
+                     variant="body1"
+                     sx={{ fontSize: 16 }}
                   >
-                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                     Eum sapiente odit nisi quibusdam magni consequuntur
-                     voluptates nemo molestias quod ipsa cupiditate debitis
-                     corporis vero beatae perspiciatis quia distinctio quas,
-                     omnis illo. Facere consectetur quidem architecto eos
-                     voluptatem ducimus libero amet nobis laboriosam obcaecati,
-                     asperiores, deserunt saepe mollitia temporibus est nisi
-                     repellat perferendis in labore. Sapiente laboriosam, iure
-                     repellat iste quo optio voluptatum nam, quos facere nemo ut
-                     explicabo ipsum sit alias atque magnam vero voluptatibus
-                     consectetur eius sunt eveniet. Ab, et dignissimos cumque
-                     neque ratione dolorum earum magnam illum necessitatibus.
+                     With our understanding and insights on each market, as well
+                     our passion for technology, we provide jobseekers the best
+                     opportunities and deliver exceptional value to employers.
+                     We are committed to continuously improving the value we
+                     provide to jobseekers and employers. To deliver on this, we
+                     continue to evolve our product and service offerings to
+                     better facilitate the matching of jobseekers to employers.
                   </Typography>
                </Box>
             </Grid>
@@ -105,7 +115,7 @@ function About() {
                   className={classes.image}
                />
             </Grid>
-            <Grid xs={12} align="center" sx={{ mt: 3 }}>
+            <Grid item xs={12} align="center" sx={{ mt: 3 }}>
                <Typography
                   variant="h3"
                   component="h2"

@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-   createTheme,
-   responsiveFontSizes,
-   ThemeProvider,
-} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
    palette: {
@@ -44,32 +40,28 @@ export const theme = createTheme({
       },
    },
    typography: {
-      // fontSize: 10,
       fontFamily: ['Montserrat', 'sans-serif'].join(','),
       h1: {
          fontSize: 66,
          '@media (max-width:480px)': {
-            fontSize: 56,
+            fontSize: 54,
          },
          '@media (max-width:360px)': {
-            fontSize: 46,
+            fontSize: 44,
          },
       },
       h2: {
-         fontSize: 58,
+         fontSize: 52,
          '@media (max-width:480px)': {
-            fontSize: 48,
+            fontSize: 40,
          },
          '@media (max-width:360px)': {
-            fontSize: 42,
+            fontSize: 34,
          },
       },
 
       h4: {
          fontSize: 16,
-         '@media (max-width:480px)': {
-            fontSize: 28,
-         },
       },
       body1: { fontSize: 14 },
 

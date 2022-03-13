@@ -9,7 +9,20 @@ import { IconButton } from '@mui/material';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { Link } from 'react-router-dom';
 
+const useStyles = makeStyles((theme) => ({
+   link: {
+      textDecoration: 'none',
+      fontSize: 16,
+      color: theme.palette.gray.fW600,
+      fontWeight: 500,
+      '&:hover': {
+         color: 'black',
+      },
+   },
+}));
+
 function DrawerComponent() {
+   const classes = useStyles();
    const [openDrawer, setOpenDrawer] = useState(false);
 
    return (
@@ -22,32 +35,39 @@ function DrawerComponent() {
             <List>
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/">Home</Link>
+                     <Link className={classes.link} to="/jobApp">
+                        Home
+                     </Link>
                   </ListItemText>
                </ListItem>
-               <Divider />
+
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/jobs">Jobs</Link>
+                     <Link className={classes.link} to="/jobs">
+                        Jobs
+                     </Link>
                   </ListItemText>
                </ListItem>
-               <Divider />
+
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/about">About Us</Link>
+                     <Link className={classes.link} to="/about">
+                        About Us
+                     </Link>
                   </ListItemText>
                </ListItem>
-               <Divider />
+
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/contact">Contact Us</Link>
+                     <Link className={classes.link} to="/contact">
+                        Contact Us
+                     </Link>
                   </ListItemText>
                </ListItem>
-               <Divider />
             </List>
          </Drawer>
          <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-            <DehazeIcon sx={{fontSize:23}} />
+            <DehazeIcon sx={{ fontSize: 23 }} className={classes.navBtn} />
          </IconButton>
       </>
    );

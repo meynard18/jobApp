@@ -34,32 +34,33 @@ function Jobs() {
    const handleClose = () => setOpen(false);
 
    const searchStates = {
+      data,
+      setData, // imported to sorted, searchBar
+      jobs,
+      setJobs, // imported to sorted, searchBar
+      searchText, // imported to searchBar
+      setSearchText, // imported to searchBar
+      category, /// imported to searchBar
+      setCategory, // imported to search Bar
+
+      pageNumber, // imported to pagination
+      setPageNumber, // imported to pagination
+      sortedJobs, // imported to SortJobs
+      setSortedJobs, // imported to SortJobs
+      jobsModal, // imported to JobsModal
+      setJobsModal, // imported to JobsModal
+      jobsPerPage,
+      pagesVisited,
+      pageCount, // imported to pagination
+      isLoading, // imported toJobPost
+      errorMessage, // imported to JobPost
+      setErrorMessage, // imported to JobPost
       open,
       setOpen,
       handleOpen,
       handleClose,
-      categoryLabel,
-      setCategoryLabel,
-      data,
-      setData,
-      jobs,
-      setJobs,
-      searchText,
-      setSearchText,
-      category,
-      setCategory,
-      errorMessage,
-      setErrorMessage,
-      pageNumber,
-      setPageNumber,
-      sortedJobs,
-      setSortedJobs,
-      jobsModal,
-      setJobsModal,
-      jobsPerPage,
-      pagesVisited,
-      pageCount,
-      isLoading,
+      categoryLabel, // imported to SearchBar
+      setCategoryLabel, // imported to SearchBar
    };
    const classes = useStyles();
 
@@ -71,9 +72,9 @@ function Jobs() {
             data: { jobs },
          } = await axios(`https://remotive.io/api/remote-jobs?limit=200`);
 
-         setJobs(jobs);
-         setData(jobs);
-         setCategoryLabel(jobs);
+         setJobs(jobs); ///  will served as filtered jobs data
+         setData(jobs); /// will be unfiltered  jobs data
+         setCategoryLabel(jobs); // will be used to declare ALL categories
          setIsLoading(false);
       } catch (error) {
          console.log(error);

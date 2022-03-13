@@ -1,22 +1,20 @@
 import * as React from 'react';
-import { Container, Typography, Button, Box, Grid, Paper } from '@mui/material';
-import heroSection from '../images/heroSection.jpg';
+import { Typography, Button, Box, Grid, Paper } from '@mui/material';
+import homeBackground from '../images/homeBackground.jpg';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
-import { cyan } from '@mui/material/colors';
 import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import CodeIcon from '@mui/icons-material/Code';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 
 import { CardActionArea } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
    container: {
-      backgroundImage: `url(${heroSection})`,
+      backgroundImage: `url(${homeBackground})`,
       width: '100%',
       margin: 'auto',
       backgroundPosition: 'center',
@@ -108,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
    },
    header2: {
       display: 'inline-block',
-      color: '#181818',
+      color: theme.palette.gray.fW500,
       [theme.breakpoints.down('xl')]: {
          textAlign: 'center',
       },
@@ -123,12 +121,6 @@ const useStyles = makeStyles((theme) => ({
          width: '100%',
       },
    },
-
-   cards: {
-      backgroundColor: 'black',
-      // width: '100%',
-   },
-
    iconBox: {
       marginBottom: '4rem',
    },
@@ -168,13 +160,13 @@ function Home() {
       <Box sx={{ minHeight: '100vh' }}>
          <Box sx={{ height: '100%' }}>
             <Grid maxWidth="xl" container className={classes.container}>
-               <Grid xs={12} className={classes.gridBox}>
+               <Grid item xs={12} className={classes.gridBox}>
                   <Box className={classes.overlay}>
                      <Typography
                         className={classes.subHeader}
                         variant="h4"
                         component="h4"
-                        gutterBottom="false"
+                        gutterBottom={false}
                         sx={{ fontWeight: 700, fontSize: 32 }}
                      >
                         Looking for a new career?
@@ -205,22 +197,22 @@ function Home() {
                </Grid>
             </Grid>
          </Box>
-         {/* <Grid maxWidth="xl" container className={classes.subContainer2}> */}
+
          <Box sx={{ height: '100%' }}>
             <Grid maxWidth="xl" container className={classes.container2}>
                <Box className={classes.header2Box}>
                   <Typography
                      variant="h2"
                      component="h2"
-                     gutterBottom="true"
+                     gutterBottom={true}
                      className={classes.header2}
                      sx={{ fontWeight: 600 }}
                   >
                      Explore Popular Jobs
                   </Typography>
                   <Typography
-                     variant="subtle1"
-                     component="subtle1"
+                     variant="h6"
+                     component="h3"
                      className={classes.subHeader2}
                      sx={{ fontWeight: 500 }}
                   >
@@ -234,8 +226,8 @@ function Home() {
                   justifyContent="center"
                   className={classes.iconBox}
                >
-                  {popularJobs.map((item) => (
-                     <Link to={'/jobs'} className={classes.link}>
+                  {popularJobs.map((item, idx) => (
+                     <Link to={'/jobs'} className={classes.link} key={idx}>
                         <Card
                            sx={{
                               minWidth: 220,
@@ -263,7 +255,7 @@ function Home() {
                                  <Typography
                                     variant="body1"
                                     align="center"
-                                    color="#9AA2A4"
+                                    color="#323232"
                                     sx={{ fontWeight: 500, mb: 1 }}
                                  >
                                     {item.number}
