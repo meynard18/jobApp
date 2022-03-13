@@ -35,11 +35,6 @@ or keywords. Searching jobs based on categories is also available for the applic
 Using the field categories along with job types such as 'full-time' or 'part-time' work
 make job search easier.
 
-## Technologies 🔥
-
-I used React and MUI (for creating design) to create this project. React has great 
-documentations and it's easy to learn. Many companies are using it on their applications 
-because it's great, fast, and trending. React also has a huge support community.
 
 ## Key Learnings from this project: 👨‍🎓
 ## 1️⃣ Context API:
