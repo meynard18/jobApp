@@ -5,7 +5,8 @@ import Jobs from './pages/Jobs';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Footer from './components/Footer';
-import {theme} from './CustomTheme'
+import { theme } from './CustomTheme';
+import ScrollToTop from './components/jobFolder/ScrollToTop';
 import {
    createTheme,
    responsiveFontSizes,
@@ -16,6 +17,7 @@ function App() {
    return (
       <ThemeProvider theme={theme}>
          <Router>
+            <ScrollToTop />
             <Navbar />
             <Routes>
                <Route exact path="/jobApp" element={<Home />} />
