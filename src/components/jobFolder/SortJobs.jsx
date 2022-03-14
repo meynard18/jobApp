@@ -17,10 +17,8 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 0,
       minHeight: '100%',
       backgroundColor: theme.palette.third.secondary,
-      width: 'clamp(12rem, 50vw, 14rem)',
-      [theme.breakpoints.down('md')]: {
-         width: '100%',
-      },
+      maxWidth: '100%',
+      minWidth: '14rem',
    },
 
    icon: {
@@ -119,7 +117,6 @@ function SortJobs() {
                   Job-Type:{' '}
                </FormLabel>
             </div>
-
             <RadioGroup
                aria-labelledby="demo-radio-buttons-group-label"
                name="radio-buttons-group"

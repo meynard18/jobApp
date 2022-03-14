@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '2rem',
       borderBottom: '1px solid #cecece',
       color: theme.palette.gray.fW500,
+      [theme.breakpoints.down('sm')]: {
+         flexDirection: 'column',
+      },
    },
 
    hoverEffect: {
@@ -157,11 +160,12 @@ function JobBoard() {
       ));
 
    return (
-      <Box sx={{ mt: 1, ml: 2 }}>
+      <Box sx={{ mt: 1, ml: 2, mr: 2 }}>
          <Box container className={classes.resultContainer}>
             <Typography
+               variant="subtitle1"
                sx={{
-                  fontSize: 16,
+                  fontSize: 18,
                   display: 'flex',
                   fontWeight: 500,
                }}
@@ -177,10 +181,10 @@ function JobBoard() {
                   }}
                />
             </Typography>
-            <Typography>{`${
+            <Typography variant="subtitle2">{`${
                jobs.length <= 1
-                  ? `${jobs.length}` + ' match'
-                  : `${jobs.length}` + ' matches'
+                  ? `${jobs.length}` + ' Match'
+                  : `${jobs.length}` + ' Matches'
             }`}</Typography>
          </Box>
 
@@ -193,15 +197,15 @@ function JobBoard() {
                sx={{
                   display: 'flex',
                   justifyContent: 'center',
+                  textAlign: 'center',
                   mt: 6,
                   fontSize: 28,
                }}
             >
-               <ErrorOutlineIcon sx={{ fontSize: 32, mr: 2, mb: 2 }} /> Job
+               <ErrorOutlineIcon sx={{ fontSize: 32, mr: 1, mb: 2 }} /> Job
                listing not Found
             </Typography>
          )}
-         {/* {displayJobs} */}
          <span>
             <JobsModal />
          </span>

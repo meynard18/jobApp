@@ -8,14 +8,31 @@ import { JobsContext } from './JobsContext';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const useStyles = makeStyles((theme) => ({
+   // container: {
+   //    display: 'flex',
+   //    margin: 'auto',
+   //    width: 'max(85%)',
+   //    marginTop: '2rem',
+   //    boxShadow: '0px 0px 0px 1px rgba(0,0,0,0.1)',
+   //    [theme.breakpoints.down('lg')]: {
+   //       width: 'max(90%)',
+   //    },
+   //    [theme.breakpoints.down('md')]: {
+   //       flexWrap: 'wrap',
+   //    },
+   // },
+
    container: {
       display: 'flex',
       margin: 'auto',
       width: 'max(85%)',
       marginTop: '2rem',
       boxShadow: '0px 0px 0px 1px rgba(0,0,0,0.1)',
+      [theme.breakpoints.down('lg')]: {
+         width: 'max(90%)',
+      },
       [theme.breakpoints.down('md')]: {
-         flexWrap: 'wrap',
+         flexDirection: 'column',
       },
    },
 
@@ -31,29 +48,29 @@ function JobPosts() {
    const classes = useStyles();
    return (
       <Box className={classes.container}>
-         <Grid container className={classes.flexItem}>
-            <Grid item lg={2.5} md={4} sm={12}>
-               <SortJobs />
-            </Grid>
-            {errorMessage.length > 0 ? (
-               /////// HANDLING ERRORS AND DATA LOADING STATUS ////////////////
+         <SortJobs />
 
-               <Typography
-                  sx={{ fontSize: 50, fontWeight: 500, margin: 'auto' }}
-               >
-                  <ErrorOutlineIcon /> {errorMessage}
+         {errorMessage.length > 0 ? (
+            /////// HANDLING ERRORS AND DATA LOADING STATUS ////////////////
+
+            <Typography
+               variant="h3"
+               sx={{ fontSize: 50, fontWeight: 500, margin: 'auto' }}
+            >
+               <ErrorOutlineIcon sx={{ fontSize: 42 }} /> {errorMessage}
+            </Typography>
+         ) : isLoading ? (
+            <div className={classes.loading}>
+               <Typography variant="h3" sx={{ fontSize: 50 }}>
+                  Loading...
                </Typography>
-            ) : isLoading ? (
-               <div className={classes.loading}>
-                  <Typography sx={{ fontSize: 50 }}>Loading...</Typography>
-               </div>
-            ) : (
-               <Grid item lg={9.5} md={8} sm={12}>
-                  <JobBoard />
-                  <Pagination />
-               </Grid>
-            )}
-         </Grid>
+            </div>
+         ) : (
+            <Box>
+               <JobBoard />
+               <Pagination />
+            </Box>
+         )}
       </Box>
    );
 }

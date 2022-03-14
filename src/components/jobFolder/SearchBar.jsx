@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
       margin: 'auto',
       display: 'flex',
       gap: '1rem',
+      [theme.breakpoints.down('lg')]: {
+         width: 'max(90%)',
+      },
    },
 
    inputStyle: {

@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 
    header: {
       textAlign: 'center',
-      fontSize: '4rem',
       color: theme.palette.third.main,
    },
    spanTextField: {
@@ -109,8 +108,8 @@ const Contact = () => {
             autoComplete="off"
          >
             <Typography
-               variant="h2"
-               component="h2"
+               variant="h1"
+               component="h1"
                className={classes.header}
                sx={{ fontWeight: 500 }}
             >

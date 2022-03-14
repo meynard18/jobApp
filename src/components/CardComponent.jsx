@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, Container } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 const cardContents = [
    {
       cardImg: team3,
@@ -22,37 +23,51 @@ const cardContents = [
    },
 ];
 
+const useStyles = makeStyles((theme) => ({
+   cardMedia: {
+      // zIndex: 1,
+      // height: 'inherit',
+   },
+
+   cardActionArea: {
+      // height: 'inherit',
+      // zIndex: 1,
+   },
+}));
+
 function CardComponent() {
+   const classes = useStyles();
    return (
       <Container sx={{ mt: 3 }}>
          <Grid container direction="row" justifyContent="center">
             {cardContents.map((item, idx) => (
-               <Card sx={{ maxWidth: 345, m: 3 }} key={idx}>
-                  <CardActionArea>
-                     <CardMedia
-                        component="img"
-                        height="400"
-                        image={item.cardImg}
-                        alt="green iguana"
-                     />
-                     <CardContent>
-                        <Typography
-                           gutterBottom
-                           variant="h5"
-                           component="div"
-                        ></Typography>
-                        <Typography
-                           variant="body1"
-                           component="h3"
-                           align="center"
-                           color="theme.palette.gray.fW600"
-                           sx={{ fontWeight: 600 }}
-                        >
-                           {item.cardTitle}
-                        </Typography>
-                     </CardContent>
-                  </CardActionArea>
-               </Card>
+               <Grid item md={4}>
+                  <Card sx={{ maxWidth: 345, m: 3 }} key={idx}>
+                     <CardActionArea>
+                        <CardMedia
+                           component="img"
+                           image={item.cardImg}
+                           alt="leadership photo"
+                        />
+                        <CardContent>
+                           <Typography
+                              gutterBottom
+                              variant="h5"
+                              component="div"
+                           ></Typography>
+                           <Typography
+                              variant="body1"
+                              component="h3"
+                              align="center"
+                              color="theme.palette.gray.fW600"
+                              sx={{ fontWeight: 600 }}
+                           >
+                              {item.cardTitle}
+                           </Typography>
+                        </CardContent>
+                     </CardActionArea>
+                  </Card>
+               </Grid>
             ))}
          </Grid>
       </Container>

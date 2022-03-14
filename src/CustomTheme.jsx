@@ -59,6 +59,14 @@ export const theme = createTheme({
             fontSize: 34,
          },
       },
+      h3: {
+         '@media (max-width:480px)': {
+            fontSize: 32,
+         },
+         '@media (max-width:360px)': {
+            fontSize: 28,
+         },
+      },
 
       h4: {
          fontSize: 16,

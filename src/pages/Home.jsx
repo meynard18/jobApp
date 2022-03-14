@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Typography, Button, Box, Grid, Paper } from '@mui/material';
+import { Typography, Button, Box, Grid } from '@mui/material';
 import homeBackground from '../images/homeBackground.jpg';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '10rem',
       background: 'rgb(255,255,255, .85)',
       borderRadius: 10,
-      outline: '1px solid #FAFAFA',
       height: 'auto',
       width: '32rem',
       [theme.breakpoints.down('xl')]: {
@@ -48,8 +47,12 @@ const useStyles = makeStyles((theme) => ({
          paddingTop: '1rem',
       },
       [theme.breakpoints.down('md')]: {
-         width: '60%',
-         padding: '1rem',
+         width: '70%',
+         padding: '2rem',
+      },
+      [theme.breakpoints.down('sm')]: {
+         width: '80%',
+         padding: '1.5rem',
       },
    },
 
@@ -63,6 +66,10 @@ const useStyles = makeStyles((theme) => ({
    header: {
       color: theme.palette.third.main,
       paddingBottom: '1.5rem',
+      [theme.breakpoints.down('sm')]: {
+         paddingRight: '.5rem',
+         paddingLeft: '.5rem',
+      },
    },
 
    link: {
@@ -85,6 +92,10 @@ const useStyles = makeStyles((theme) => ({
          display: 'flex',
          justifyContent: 'center',
          margin: '3rem auto auto',
+      },
+      [theme.breakpoints.down('sm')]: {
+         paddingRight: '.5rem',
+         paddingLeft: '.5rem',
       },
    },
    subContainer2: {

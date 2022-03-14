@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
-import { Toolbar, CssBaseline, AppBar } from '@mui/material';
+import { Toolbar, CssBaseline, AppBar, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import DrawerComponent from './DrawerComponent';
@@ -32,8 +32,11 @@ const useStyles = makeStyles((theme) => ({
    },
 
    logo: {
-      display: 'flex',
-      alignItems: 'center',
+      textDecoration: 'none',
+      color: theme.palette.gray.fW500,
+   },
+   logoSpan: {
+      color: theme.palette.third.third,
    },
 
    link: {
@@ -62,12 +65,14 @@ function Navbar() {
       >
          <CssBaseline />
          <Toolbar className={classes.navbar}>
-            <Link to="/" className={classes.logo}>
-               <img
-                  src={logo}
-                  alt="Company Logo"
-                  sx={{ width: 'auto', height: 'auto' }}
-               />
+            <Link
+               to="/"
+               className={classes.logo}
+               sx={{ textDecoration: 'none' }}
+            >
+               <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
+                  JOB<span className={classes.logoSpan}>HUNT</span>
+               </Typography>
             </Link>
             {isMobile ? (
                <DrawerComponent />
