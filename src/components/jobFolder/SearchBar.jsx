@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { JobsContext } from './JobsContext';
+import SearchIcon from '@mui/icons-material/Search';
 
 const useStyles = makeStyles((theme) => ({
    container: {
@@ -27,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
    },
    formControl2: {
       width: '100%',
+   },
+
+   searchIcon: {
+      position: 'absolute',
+      right: '5%',
+      top: '15%',
+      color: theme.palette.third.main,
    },
 }));
 
@@ -100,7 +108,9 @@ function SearchBar() {
       } else setJobs(data);
    }, [category]);
 
-   useEffect(() => {}, [jobs]);
+   useEffect(() => {
+      console.log('working');
+   }, [jobs]);
 
    return (
       <>
@@ -135,11 +145,17 @@ function SearchBar() {
                   label="Search for Jobs"
                   variant="outlined"
                   onChange={handleSearch}
-                  placeholder="Position Title, Location, Description"
                   onKeyPress={handleKeyDown}
+                  placeholder="Job title, location, keywords"
                   value={searchText}
-                  sx={{ borderRadius: 5 }}
-               ></OutlinedInput>
+                  sx={{ borderRadius: 5, position: 'relative' }}
+               />{' '}
+               <SearchIcon
+                  className={classes.searchIcon}
+                  sx={{
+                     fontSize: 25,
+                  }}
+               />
             </FormControl>
          </Box>
       </>
