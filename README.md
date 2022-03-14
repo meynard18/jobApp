@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# #Hello World! Welcome to JOBHUNT's ReadMe
+![jobAppLogo](https://user-images.githubusercontent.com/82758164/158066067-227c33a1-7d61-4ec5-981b-96e852bd909a.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Steps to clone this project
 
-## Available Scripts
+#clone repository
+### `git clone https://github.com/meynard18/jobApp`
 
-In the project directory, you can run:
+#cd into the cloned repository
+### `cd jobApp`
 
+#install dependencies
+### `npm install`
+
+#run server
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies 🔥
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I used React JS and MUI (for implementing design) to create this project. React has great 
+documentations and it's easy to learn. Many companies are using it on their applications 
+because it's great, fast, and trending. React also has a huge support community.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Objective‼
 
-### `npm run build`
+The objective is to help job applicants find remote jobs from different parts of the world 🌎.
+Job requirements, skills, salaries, and other helpful informations can be access on this application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features ✨
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application retrieves data from a third party Web API. These datas are used to
+create a section where job applicants can search by typing job positions, location,
+or keywords. Searching jobs based on categories is also available for the applicants. 
+Using the field categories along with job types such as 'full-time' or 'part-time' work
+make job search easier.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Key Learnings from this project: 👨‍🎓
+## 1️⃣ Context API:
+  The use of Context API was great and efficient. When I started this
+project I was funneling datas from one component to another.
+Sometimes, it had to go through a components that doesn't even need it.
+It can be frustating and confusing at times from all the unnecessary data being passed around.
+Luckily, I found a better way by the use of Context API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 2️⃣ Filtering Datas
+  Filtering Data was pretty common, but filtering datas from another
+filtered data and be able to go back to previous filtered data was challenging for me💆‍♂️ .
+Implementing multiple filtering functionalities on this application was a great learning experience. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features for the Future 💯💯
+✅ Adding a Recent Search feature on this application would be great. This feature would allow
+users to see their previous search details such as dates, company names, or keywords.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✅ Applicant Postings for potentials employers or recruiters to see and contact job applicants.
