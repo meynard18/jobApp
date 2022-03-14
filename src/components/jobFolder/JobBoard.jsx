@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
    },
 
    description: {
-      color: theme.palette.gray.fW500,
+      color: theme.palette.gray.fW600,
    },
    spanLanguages: {
       background: theme.palette.gray.bg,
@@ -107,7 +107,7 @@ function JobBoard() {
                <Typography
                   variant="body1"
                   className={classes.description}
-                  sx={{ mt: 2, mb: 3, fontSize: 16 }}
+                  sx={{ mt: 2, mb: 3, fontSize: 15 }}
                >
                   {`${job.description
                      .replace(/(<([^>]+)>)/gi, '')

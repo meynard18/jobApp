@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    aboutText: {
-      color: theme.palette.gray.fW500,
+      color: theme.palette.gray.fW600,
       width: '90%',
       margin: 'auto',
       [theme.breakpoints.down('lg')]: {
@@ -80,7 +80,11 @@ function About() {
                      className={classes.subHeader}
                      component="h2"
                      variant="h4"
-                     sx={{ fontSize: 22, mb: 2, fontWeight: 500 }}
+                     sx={{
+                        fontSize: 16,
+                        mb: 2,
+                        fontWeight: 600,
+                     }}
                   >
                      Our vision is to connect businesses with talent and improve
                      lives through better careers.
