@@ -1,5 +1,6 @@
 # #Hello World! Welcome to JOBHUNT's ReadMe
-![jobAppLogo](https://user-images.githubusercontent.com/82758164/158066067-227c33a1-7d61-4ec5-981b-96e852bd909a.png)
+<!-- ![jobAppLogo](https://user-images.githubusercontent.com/82758164/158066067-227c33a1-7d61-4ec5-981b-96e852bd909a.png) -->
+![](src/images/jobAppLogo.png)
 
 # Steps to clone this project
 
