@@ -62,7 +62,7 @@ function Navbar() {
       >
          <CssBaseline />
          <Toolbar className={classes.navbar}>
-            <Link to="/jobApp" className={classes.logo}>
+            <Link to="/" className={classes.logo}>
                <img
                   src={logo}
                   alt="Company Logo"
