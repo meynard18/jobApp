@@ -8,20 +8,6 @@ import { JobsContext } from './JobsContext';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const useStyles = makeStyles((theme) => ({
-   // container: {
-   //    display: 'flex',
-   //    margin: 'auto',
-   //    width: 'max(85%)',
-   //    marginTop: '2rem',
-   //    boxShadow: '0px 0px 0px 1px rgba(0,0,0,0.1)',
-   //    [theme.breakpoints.down('lg')]: {
-   //       width: 'max(90%)',
-   //    },
-   //    [theme.breakpoints.down('md')]: {
-   //       flexWrap: 'wrap',
-   //    },
-   // },
-
    container: {
       display: 'flex',
       margin: 'auto',
@@ -34,6 +20,10 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('md')]: {
          flexDirection: 'column',
       },
+   },
+
+   jobBoard: {
+      flexGrow: 1,
    },
 
    loading: {
@@ -66,7 +56,7 @@ function JobPosts() {
                </Typography>
             </div>
          ) : (
-            <Box>
+            <Box className={classes.jobBoard}>
                <JobBoard />
                <Pagination />
             </Box>

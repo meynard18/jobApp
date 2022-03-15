@@ -7,7 +7,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, Container } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 const cardContents = [
    {
       cardImg: team3,
@@ -23,20 +22,7 @@ const cardContents = [
    },
 ];
 
-const useStyles = makeStyles((theme) => ({
-   cardMedia: {
-      // zIndex: 1,
-      // height: 'inherit',
-   },
-
-   cardActionArea: {
-      // height: 'inherit',
-      // zIndex: 1,
-   },
-}));
-
 function CardComponent() {
-   const classes = useStyles();
    return (
       <Container sx={{ mt: 3 }}>
          <Grid container direction="row" justifyContent="center">

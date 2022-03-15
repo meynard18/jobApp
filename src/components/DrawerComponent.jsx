@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Drawer } from '@mui/material';
-import { Divider } from '@mui/material';
 import { List } from '@mui/material';
 import { ListItem } from '@mui/material';
 import { ListItemText } from '@mui/material';

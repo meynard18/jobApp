@@ -14,15 +14,14 @@ const useStyles = makeStyles((theme) => ({
    resultContainer: {
       display: 'flex',
       justifyContent: 'space-between',
-      paddingLeft: '1.5rem',
-      paddingRight: '1.5rem',
-      paddingBottom: '.5rem',
+      padding: '0 1.5rem .5rem 1.5rem',
       marginTop: '2rem',
       marginBottom: '2rem',
       borderBottom: '1px solid #cecece',
       color: theme.palette.gray.fW500,
       [theme.breakpoints.down('sm')]: {
-         flexDirection: 'column',
+         paddingLeft: 0,
+         paddingRight: 0,
       },
    },
 
@@ -164,6 +163,7 @@ function JobBoard() {
          <Box container className={classes.resultContainer}>
             <Typography
                variant="subtitle1"
+               component="subtitle1"
                sx={{
                   fontSize: 18,
                   display: 'flex',
