@@ -35,8 +35,7 @@ function CardComponent() {
                      key={idx}
                      sx={{
                         maxWidth: 345,
-                        minWidth: 300,
-                        m: 3,
+                        m: 2,
                         pointerEvents: 'none',
                      }}
                   >
@@ -50,7 +49,7 @@ function CardComponent() {
                         <CardContent>
                            <Typography
                               gutterBottom
-                              variant="h5"
+                              variant="h6"
                               component="div"
                               textAlign="center"
                               sx={{ fontWeight: 500 }}
