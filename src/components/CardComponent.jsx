@@ -10,15 +10,18 @@ import { CardActionArea, Grid, Container } from '@mui/material';
 const cardContents = [
    {
       cardImg: team3,
-      cardTitle: 'Chief Operating Officer',
+      name: 'Andrew Yang',
+      position: 'Chief Operating Officer',
    },
    {
       cardImg: team2,
-      cardTitle: 'Chief Executive Officer',
+      name: 'Jonathan Murray',
+      position: 'Chief Executive Officer',
    },
    {
       cardImg: team,
-      cardTitle: 'Chief Human Resources Officer',
+      name: 'Anna Williams',
+      position: 'Chief Human Resources Officer',
    },
 ];
 
@@ -28,10 +31,19 @@ function CardComponent() {
          <Grid container direction="row" justifyContent="center">
             {cardContents.map((item, idx) => (
                <Grid item md={4}>
-                  <Card sx={{ maxWidth: 345, m: 3 }} key={idx}>
+                  <Card
+                     key={idx}
+                     sx={{
+                        maxWidth: 345,
+                        minWidth: 300,
+                        m: 3,
+                        pointerEvents: 'none',
+                     }}
+                  >
                      <CardActionArea>
                         <CardMedia
                            component="img"
+                           margin="auto"
                            image={item.cardImg}
                            alt="leadership photo"
                         />
@@ -40,15 +52,19 @@ function CardComponent() {
                               gutterBottom
                               variant="h5"
                               component="div"
-                           ></Typography>
+                              textAlign="center"
+                              sx={{ fontWeight: 500 }}
+                           >
+                              {item.name}
+                           </Typography>
                            <Typography
                               variant="body1"
                               component="h3"
                               align="center"
                               color="theme.palette.gray.fW600"
-                              sx={{ fontWeight: 600 }}
+                              sx={{ fontWeight: 500, fontSize: 15 }}
                            >
-                              {item.cardTitle}
+                              {item.position}
                            </Typography>
                         </CardContent>
                      </CardActionArea>
