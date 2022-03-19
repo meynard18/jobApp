@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
       left: '50%',
       transform: 'translate(-50%, -50%)',
       width: 1000,
-      height: 600,
+      height: 550,
       backgroundColor: 'white',
       boxShadow: 24,
       padding: 24,
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
       overflowX: 'hidden',
       outline: 'none',
       [theme.breakpoints.down('xl')]: {
+         height: '80%',
          width: '90%',
       },
    },
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
    nameValue: {
       color: theme.palette.gray.fW600,
       fontSize: '.8rem',
+      display: 'inline-block',
    },
 
    value: {
@@ -99,6 +101,7 @@ export default function BasicModal() {
                            ))}
                         </Typography>
                      </div>
+
                      <Typography variant="h2" sx={{ mt: 2, fontWeight: 500 }}>
                         <span className={classes.nameValue}>
                            Job Type:&nbsp;&nbsp;
