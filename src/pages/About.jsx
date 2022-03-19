@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
-import employee from '../images/aboutIMG.jpg';
+import employee from '../images/aboutIMG.webp';
 
 import { makeStyles } from '@mui/styles';
 import CardComponent from '../components/CardComponent';

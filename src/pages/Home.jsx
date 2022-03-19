@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Typography, Button, Box, Grid } from '@mui/material';
-import homeBackground from '../images/homeBackground.jpg';
+import homeBackground from '../images/homeBackground.webp';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows';
