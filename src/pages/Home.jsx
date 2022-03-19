@@ -185,7 +185,8 @@ function Home() {
                      <Typography
                         variant="h1"
                         component="h1"
-                        sx={{ fontWeight: 700 }}
+                        lineHeight="1.1"
+                        sx={{ fontWeight: 700, mt: 1.5 }}
                         className={classes.header}
                      >
                         IT STARTS HERE
@@ -197,7 +198,7 @@ function Home() {
                            sx={{
                               fontWeight: 'bold',
                               fontSize: 18,
-                              mb: 4,
+                              mb: 3.5,
                            }}
                            className={classes.btnJob}
                         >
