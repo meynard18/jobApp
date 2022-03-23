@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
    },
 
    input: {
-      [theme.breakpoints.down('lg')]: {
+      width: '36rem',
+      [theme.breakpoints.down('md')]: {
          width: '100%',
       },
    },
@@ -174,7 +175,7 @@ const Contact = () => {
 
                <Button
                   variant="contained"
-                  size="small"
+                  size="medium"
                   disableElevation
                   onClick={saveInputValues}
                >

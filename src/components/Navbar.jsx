@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
-import { Toolbar, CssBaseline, AppBar, Typography } from '@mui/material';
+import { Toolbar, CssBaseline, AppBar, Typography, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import DrawerComponent from './DrawerComponent';
@@ -58,40 +58,42 @@ function Navbar() {
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
    return (
-      <StyledAppbar
-         position="sticky"
-         className={classes.navContainer}
-         elevation={0}
-      >
-         <CssBaseline />
-         <Toolbar className={classes.navbar}>
-            <Link
-               to="/"
-               className={classes.logo}
-               sx={{ textDecoration: 'none' }}
-            >
-               <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
-                  JOB<span className={classes.logoSpan}>HUNT</span>
-               </Typography>
-            </Link>
-            {isMobile ? (
-               <DrawerComponent />
-            ) : (
-               <div className={classes.navLink}>
-                  <Link to="/jobs" className={classes.link}>
-                     Jobs
-                  </Link>
-                  <Link to="/about" className={classes.link}>
-                     About Us
-                  </Link>
+      <Box maxWidth="xxl" sx={{ m: 'auto' }}>
+         <StyledAppbar
+            position="sticky"
+            className={classes.navContainer}
+            elevation={0}
+         >
+            <CssBaseline />
+            <Toolbar className={classes.navbar}>
+               <Link
+                  to="/"
+                  className={classes.logo}
+                  sx={{ textDecoration: 'none' }}
+               >
+                  <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
+                     JOB<span className={classes.logoSpan}>HUNT</span>
+                  </Typography>
+               </Link>
+               {isMobile ? (
+                  <DrawerComponent />
+               ) : (
+                  <div className={classes.navLink}>
+                     <Link to="/jobs" className={classes.link}>
+                        Jobs
+                     </Link>
+                     <Link to="/about" className={classes.link}>
+                        About Us
+                     </Link>
 
-                  <Link to="/contact" className={classes.link}>
-                     Contact Us
-                  </Link>
-               </div>
-            )}
-         </Toolbar>
-      </StyledAppbar>
+                     <Link to="/contact" className={classes.link}>
+                        Contact Us
+                     </Link>
+                  </div>
+               )}
+            </Toolbar>
+         </StyledAppbar>
+      </Box>
    );
 }
 

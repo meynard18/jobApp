@@ -87,7 +87,7 @@ function Jobs() {
 
    return (
       <JobsContext.Provider value={searchStates}>
-         <Box className={classes.container}>
+         <Box className={classes.container} maxWidth="xxl" sx={{ m: 'auto' }}>
             <SearchBar />
             <JobPosts />
          </Box>
