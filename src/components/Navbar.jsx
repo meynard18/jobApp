@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 import { Toolbar, CssBaseline, AppBar, Typography, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
