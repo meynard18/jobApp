@@ -70,7 +70,7 @@ function Jobs() {
          const {
             result,
             data: { jobs },
-         } = await axios(`https://remotive.io/api/remote-jobs?limit=200`);
+         } = await axios(`https://remotive.com/api/remote-jobs?limit=200`);
 
          setJobs(jobs); ///  will served as filtered jobs data
          setData(jobs); /// will be unfiltered  jobs data
