@@ -57,46 +57,46 @@ function Navbar() {
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
    return (
-      <Box maxWidth="xxl" sx={{ m: 'auto' }}>
-         <StyledAppbar
-            position="sticky"
-            className={classes.navContainer}
-            elevation={0}
-         >
-            <CssBaseline />
-            <Toolbar className={classes.navbar}>
-               <Link
-                  to="/"
-                  className={classes.logo}
-                  sx={{ textDecoration: 'none' }}
-               >
-                  <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
-                     JOB<span className={classes.logoSpan}>HUNT</span>
-                  </Typography>
-               </Link>
-               {isMobile ? (
-                  <DrawerComponent />
-               ) : (
-                  <div className={classes.navLink}>
-                     <Link to="/jobs" className={classes.link}>
-                        Jobs
-                     </Link>
-                     <Link to="/about" className={classes.link}>
-                        About Us
-                     </Link>
+      <StyledAppbar
+         position="sticky"
+         className={classes.navContainer}
+         elevation={0}
+      >
+         <CssBaseline />
+         <Toolbar className={classes.navbar}>
+            <Link
+               to="/"
+               className={classes.logo}
+               sx={{ textDecoration: 'none' }}
+            >
+               <Typography sx={{ fontSize: 20, fontWeight: 600 }}>
+                  JOB<span className={classes.logoSpan}>HUNT</span>
+               </Typography>
+            </Link>
+            {isMobile ? (
+               <DrawerComponent />
+            ) : (
+               <div className={classes.navLink}>
+                  <Link to="/jobs" className={classes.link}>
+                     Jobs
+                  </Link>
+                  <Link to="/about" className={classes.link}>
+                     About Us
+                  </Link>
 
-                     <Link to="/contact" className={classes.link}>
-                        Contact Us
-                     </Link>
-                  </div>
-               )}
-            </Toolbar>
-         </StyledAppbar>
-      </Box>
+                  <Link to="/contact" className={classes.link}>
+                     Contact Us
+                  </Link>
+               </div>
+            )}
+         </Toolbar>
+      </StyledAppbar>
    );
 }
 
 export default Navbar;
 const StyledAppbar = styled(AppBar)`
    background-color: white;
+   max-width: 1366px;
+   margin: auto;
 `;
